@@ -1,0 +1,25 @@
+{
+  "@@locale": "en",
+  "appTitle": "VennskApp",
+  "@appTitle": { "description": "App name; not translated." },
+  "tabShelf": "My shelf",
+  "@tabShelf": { "description": "Bottom tab: the user's own books." },
+  "tabDiscover": "Discover",
+  "@tabDiscover": { "description": "Bottom tab: find books neighbors have." },
+  "tabLoans": "Loans",
+  "@tabLoans": { "description": "Bottom tab: books borrowed and lent." },
+  "tabMe": "Me",
+  "@tabMe": { "description": "Bottom tab: profile, reading log, settings." },
+  "shelfEmptyTitle": "Your shelf is waiting",
+  "shelfEmptyBody": "Add the books you own so your neighbors can discover them.",
+  "discoverEmptyTitle": "Find a book nearby",
+  "discoverEmptyBody": "Search for a title and see which friends and neighbors can lend it.",
+  "loansEmptyTitle": "No loans yet",
+  "loansEmptyBody": "Books you borrow or lend will appear here.",
+  "meTitle": "Your corner",
+  "daysLeft": "{count, plural, =0{Due today} =1{1 day left} other{{count} days left}}",
+  "@daysLeft": {
+    "description": "Countdown on an active loan.",
+    "placeholders": { "count": { "type": "int" } }
+  }
+}
