@@ -6,6 +6,8 @@ import 'package:go_router/go_router.dart';
 import '../../core/supabase.dart';
 import '../profile/profile_repository.dart';
 import '../profile/visibility_labels.dart';
+import '../reading/log_session_sheet.dart';
+import '../reading/reading_screen.dart';
 import '../social/person.dart';
 import '../social/social_repository.dart';
 
@@ -54,6 +56,26 @@ class MeScreen extends ConsumerWidget {
                   leading: const Icon(Icons.thumb_up_outlined),
                   title: Text(l10n.meThumbsUp(profile.thumbsUp)),
                 ),
+                const Divider(),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          l10n.readingTitle,
+                          style: theme.textTheme.titleMedium,
+                        ),
+                      ),
+                      TextButton.icon(
+                        onPressed: () => showLogSessionSheet(context),
+                        icon: const Icon(Icons.add),
+                        label: Text(l10n.readingLogButton),
+                      ),
+                    ],
+                  ),
+                ),
+                ReadingStatsCard(onTap: () => context.push('/me/reading')),
                 const Divider(),
                 ListTile(
                   leading: Badge(

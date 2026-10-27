@@ -7,6 +7,7 @@ import '../books/book_cover.dart';
 import '../profile/profile.dart';
 import '../profile/profile_repository.dart';
 import '../profile/visibility_labels.dart';
+import '../reading/log_session_sheet.dart';
 import 'library_item.dart';
 import 'library_repository.dart';
 import 'status_labels.dart';
@@ -85,7 +86,15 @@ class ItemDetailScreen extends ConsumerWidget {
         AsyncData(:final value) => _Details(
           item: value,
           defaultVisibility: defaultVisibility,
-          onChange: (c) => _save(context, ref, c),
+          onChange: (c) async {
+            await _save(context, ref, c);
+            // Finishing a book feeds the reading-pace estimate.
+            if (c.status == ReadingStatus.read &&
+                value.status != ReadingStatus.read &&
+                context.mounted) {
+              await askFinishedDates(context, ref, value.book.id);
+            }
+          },
         ),
         AsyncError(:final error) => Center(
           child: Text(l10n.genericError('$error')),
@@ -162,6 +171,16 @@ class _Details extends StatelessWidget {
               onSelectionChanged: (s) =>
                   onChange(LibraryItemChanges(status: s.first)),
             ),
+            if (item.status == ReadingStatus.reading)
+              Align(
+                alignment: Alignment.centerLeft,
+                child: TextButton.icon(
+                  onPressed: () =>
+                      showLogSessionSheet(context, bookId: item.book.id),
+                  icon: const Icon(Icons.timer_outlined),
+                  label: Text(l10n.readingLogButton),
+                ),
+              ),
             const SizedBox(height: 24),
             Text(l10n.detailRating, style: theme.textTheme.titleSmall),
             Row(

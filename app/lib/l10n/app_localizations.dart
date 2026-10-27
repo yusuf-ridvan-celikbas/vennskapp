@@ -1437,6 +1437,186 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Book returned'**
   String get eventReturned;
+
+  /// No description provided for @eventExpired.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled automatically: no handover within 7 days'**
+  String get eventExpired;
+
+  /// No description provided for @loanAcceptSuggested.
+  ///
+  /// In en, this message translates to:
+  /// **'Based on {name}\'s reading pace and the book\'s length ({pages} pages), we suggest {days} days. You can choose any length.'**
+  String loanAcceptSuggested(String name, int days, int pages);
+
+  /// No description provided for @readingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reading'**
+  String get readingTitle;
+
+  /// No description provided for @readingLogButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Log reading'**
+  String get readingLogButton;
+
+  /// No description provided for @readingLogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What did you read?'**
+  String get readingLogTitle;
+
+  /// No description provided for @readingPages.
+  ///
+  /// In en, this message translates to:
+  /// **'Pages read'**
+  String get readingPages;
+
+  /// No description provided for @readingHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Hours'**
+  String get readingHours;
+
+  /// No description provided for @readingMinutes.
+  ///
+  /// In en, this message translates to:
+  /// **'Minutes'**
+  String get readingMinutes;
+
+  /// No description provided for @readingWhichBook.
+  ///
+  /// In en, this message translates to:
+  /// **'Book (optional)'**
+  String get readingWhichBook;
+
+  /// No description provided for @readingNoBook.
+  ///
+  /// In en, this message translates to:
+  /// **'No specific book'**
+  String get readingNoBook;
+
+  /// No description provided for @readingChangeDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Change'**
+  String get readingChangeDate;
+
+  /// No description provided for @readingSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get readingSave;
+
+  /// No description provided for @readingTimeInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a reading time between 1 minute and 24 hours.'**
+  String get readingTimeInvalid;
+
+  /// No description provided for @readingLogged.
+  ///
+  /// In en, this message translates to:
+  /// **'Nice reading! Saved.'**
+  String get readingLogged;
+
+  /// No description provided for @readingFinishedRangeHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'When did you start and finish it?'**
+  String get readingFinishedRangeHelp;
+
+  /// No description provided for @readingFinishedSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Finished! This helps us suggest fair loan times for you.'**
+  String get readingFinishedSaved;
+
+  /// No description provided for @readingPrivacyNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Your reading log is private. Lenders only see a suggested number of days, never your stats.'**
+  String get readingPrivacyNote;
+
+  /// No description provided for @readingFinishedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Finished books'**
+  String get readingFinishedTitle;
+
+  /// No description provided for @readingFinishedEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark a book as Read to add it here.'**
+  String get readingFinishedEmpty;
+
+  /// No description provided for @readingFinishedLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{date} · {days, plural, =1{read in 1 day} other{read in {days} days}}'**
+  String readingFinishedLine(String date, int days);
+
+  /// No description provided for @readingSessionsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reading sessions'**
+  String get readingSessionsTitle;
+
+  /// No description provided for @readingSessionsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No sessions yet. Log your reading to see your pace.'**
+  String get readingSessionsEmpty;
+
+  /// No description provided for @readingSessionLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{pages, plural, =1{1 page} other{{pages} pages}} in {minutes} min'**
+  String readingSessionLine(int pages, int minutes);
+
+  /// No description provided for @statBooksThisYear.
+  ///
+  /// In en, this message translates to:
+  /// **'books this year'**
+  String get statBooksThisYear;
+
+  /// No description provided for @statPages30.
+  ///
+  /// In en, this message translates to:
+  /// **'pages in 30 days'**
+  String get statPages30;
+
+  /// No description provided for @statPagesPerHour.
+  ///
+  /// In en, this message translates to:
+  /// **'pages per hour'**
+  String get statPagesPerHour;
+
+  /// No description provided for @statPace.
+  ///
+  /// In en, this message translates to:
+  /// **'Your pace: about {pages} pages a day'**
+  String statPace(int pages);
+
+  /// No description provided for @statPaceNew.
+  ///
+  /// In en, this message translates to:
+  /// **'We start with a typical pace and learn yours as you finish books.'**
+  String get statPaceNew;
+
+  /// No description provided for @statPaceLearned.
+  ///
+  /// In en, this message translates to:
+  /// **'A 300-page book would get about {days} days.'**
+  String statPaceLearned(int days);
+
+  /// No description provided for @statConfidence.
+  ///
+  /// In en, this message translates to:
+  /// **'How well we know your pace'**
+  String get statConfidence;
 }
 
 class _AppLocalizationsDelegate

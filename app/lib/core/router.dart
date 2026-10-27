@@ -14,6 +14,7 @@ import '../features/loans/loan_detail_screen.dart';
 import '../features/loans/loans_screen.dart';
 import '../features/me/me_screen.dart';
 import '../features/onboarding/onboarding_screen.dart';
+import '../features/reading/reading_screen.dart';
 import '../features/shell/home_shell.dart';
 import '../features/social/friends_screen.dart';
 import '../features/social/person_screen.dart';
@@ -144,6 +145,11 @@ final routerProvider = Provider<GoRouter>((ref) {
                     path: 'friends',
                     parentNavigatorKey: _rootKey,
                     builder: (_, _) => const FriendsScreen(),
+                  ),
+                  GoRoute(
+                    path: 'reading',
+                    parentNavigatorKey: _rootKey,
+                    builder: (_, _) => const ReadingScreen(),
                   ),
                 ],
               ),

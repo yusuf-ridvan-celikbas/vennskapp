@@ -889,4 +889,122 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get eventReturned => 'Book returned';
+
+  @override
+  String get eventExpired =>
+      'Cancelled automatically: no handover within 7 days';
+
+  @override
+  String loanAcceptSuggested(String name, int days, int pages) {
+    return 'Based on $name\'s reading pace and the book\'s length ($pages pages), we suggest $days days. You can choose any length.';
+  }
+
+  @override
+  String get readingTitle => 'Reading';
+
+  @override
+  String get readingLogButton => 'Log reading';
+
+  @override
+  String get readingLogTitle => 'What did you read?';
+
+  @override
+  String get readingPages => 'Pages read';
+
+  @override
+  String get readingHours => 'Hours';
+
+  @override
+  String get readingMinutes => 'Minutes';
+
+  @override
+  String get readingWhichBook => 'Book (optional)';
+
+  @override
+  String get readingNoBook => 'No specific book';
+
+  @override
+  String get readingChangeDate => 'Change';
+
+  @override
+  String get readingSave => 'Save';
+
+  @override
+  String get readingTimeInvalid =>
+      'Please enter a reading time between 1 minute and 24 hours.';
+
+  @override
+  String get readingLogged => 'Nice reading! Saved.';
+
+  @override
+  String get readingFinishedRangeHelp => 'When did you start and finish it?';
+
+  @override
+  String get readingFinishedSaved =>
+      'Finished! This helps us suggest fair loan times for you.';
+
+  @override
+  String get readingPrivacyNote =>
+      'Your reading log is private. Lenders only see a suggested number of days, never your stats.';
+
+  @override
+  String get readingFinishedTitle => 'Finished books';
+
+  @override
+  String get readingFinishedEmpty => 'Mark a book as Read to add it here.';
+
+  @override
+  String readingFinishedLine(String date, int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: 'read in $days days',
+      one: 'read in 1 day',
+    );
+    return '$date · $_temp0';
+  }
+
+  @override
+  String get readingSessionsTitle => 'Reading sessions';
+
+  @override
+  String get readingSessionsEmpty =>
+      'No sessions yet. Log your reading to see your pace.';
+
+  @override
+  String readingSessionLine(int pages, int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      pages,
+      locale: localeName,
+      other: '$pages pages',
+      one: '1 page',
+    );
+    return '$_temp0 in $minutes min';
+  }
+
+  @override
+  String get statBooksThisYear => 'books this year';
+
+  @override
+  String get statPages30 => 'pages in 30 days';
+
+  @override
+  String get statPagesPerHour => 'pages per hour';
+
+  @override
+  String statPace(int pages) {
+    return 'Your pace: about $pages pages a day';
+  }
+
+  @override
+  String get statPaceNew =>
+      'We start with a typical pace and learn yours as you finish books.';
+
+  @override
+  String statPaceLearned(int days) {
+    return 'A 300-page book would get about $days days.';
+  }
+
+  @override
+  String get statConfidence => 'How well we know your pace';
 }

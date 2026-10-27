@@ -82,6 +82,7 @@ class _LoanBodyState extends ConsumerState<_LoanBody> {
     required int min,
     required int max,
     String? help,
+    int? suggested,
   }) {
     final l10n = AppLocalizations.of(context);
     final text = TextEditingController(text: '$initial');
@@ -103,6 +104,9 @@ class _LoanBodyState extends ConsumerState<_LoanBody> {
                   children: [
                     for (final d in presets)
                       ChoiceChip(
+                        avatar: d == suggested
+                            ? const Icon(Icons.auto_awesome, size: 16)
+                            : null,
                         label: Text(l10n.daysCount(d)),
                         selected: value == d,
                         onSelected: (_) =>
@@ -172,10 +176,17 @@ class _LoanBodyState extends ConsumerState<_LoanBody> {
       title: l10n.loanAcceptTitle,
       label: l10n.loanDaysLabel,
       initial: loan.suggestedDays ?? 21,
-      presets: const [7, 14, 21, 28],
+      presets: {?loan.suggestedDays, 7, 14, 21, 28}.toList()..sort(),
+      suggested: loan.suggestedDays,
       min: 3,
       max: 90,
-      help: l10n.loanAcceptHelp(loan.otherName),
+      help: loan.suggestedDays == null
+          ? l10n.loanAcceptHelp(loan.otherName)
+          : l10n.loanAcceptSuggested(
+              loan.otherName,
+              loan.suggestedDays!,
+              loan.pageCount ?? 300,
+            ),
     );
     if (days != null) {
       await _run(

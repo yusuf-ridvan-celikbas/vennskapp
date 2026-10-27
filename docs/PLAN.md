@@ -370,3 +370,11 @@ Total ≈ 12–18 part-time weeks. Each milestone ends with something you can sh
   6. Shift `due_at` into the past in SQL and run the cron job: overdue notification appears.
   7. A confirms the return, and 👍 feedback is recorded.
 - **Friends phase:** repeat the flow above on the cloud deployment with real phones.
+
+---
+
+## Decision log (during implementation)
+- 2026-10-27: Loans that are accepted but not handed over within **7 days** are cancelled automatically (hourly `pg_cron` job `expire-stale-loans`).
+- 2026-10-27: Loan partners can see each other's basic profile while a loan is open and for **30 days** after it ends.
+- 2026-10-27: Google Books fallback needs a free API key (`GOOGLE_BOOKS_API_KEY`); the anonymous quota is unusable.
+- Known follow-up: limit how often a user can move their home area, so distance labels can't be used to narrow down someone's grid cell.

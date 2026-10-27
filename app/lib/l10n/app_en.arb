@@ -560,5 +560,82 @@
   },
   "eventExtensionAccepted": "Extension accepted",
   "eventExtensionDeclined": "Extension declined",
-  "eventReturned": "Book returned"
+  "eventReturned": "Book returned",
+  "eventExpired": "Cancelled automatically: no handover within 7 days",
+  "loanAcceptSuggested": "Based on {name}'s reading pace and the book's length ({pages} pages), we suggest {days} days. You can choose any length.",
+  "@loanAcceptSuggested": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "days": {
+        "type": "int"
+      },
+      "pages": {
+        "type": "int"
+      }
+    }
+  },
+  "readingTitle": "Reading",
+  "readingLogButton": "Log reading",
+  "readingLogTitle": "What did you read?",
+  "readingPages": "Pages read",
+  "readingHours": "Hours",
+  "readingMinutes": "Minutes",
+  "readingWhichBook": "Book (optional)",
+  "readingNoBook": "No specific book",
+  "readingChangeDate": "Change",
+  "readingSave": "Save",
+  "readingTimeInvalid": "Please enter a reading time between 1 minute and 24 hours.",
+  "readingLogged": "Nice reading! Saved.",
+  "readingFinishedRangeHelp": "When did you start and finish it?",
+  "readingFinishedSaved": "Finished! This helps us suggest fair loan times for you.",
+  "readingPrivacyNote": "Your reading log is private. Lenders only see a suggested number of days, never your stats.",
+  "readingFinishedTitle": "Finished books",
+  "readingFinishedEmpty": "Mark a book as Read to add it here.",
+  "readingFinishedLine": "{date} · {days, plural, =1{read in 1 day} other{read in {days} days}}",
+  "@readingFinishedLine": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "readingSessionsTitle": "Reading sessions",
+  "readingSessionsEmpty": "No sessions yet. Log your reading to see your pace.",
+  "readingSessionLine": "{pages, plural, =1{1 page} other{{pages} pages}} in {minutes} min",
+  "@readingSessionLine": {
+    "placeholders": {
+      "pages": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "statBooksThisYear": "books this year",
+  "statPages30": "pages in 30 days",
+  "statPagesPerHour": "pages per hour",
+  "statPace": "Your pace: about {pages} pages a day",
+  "@statPace": {
+    "placeholders": {
+      "pages": {
+        "type": "int"
+      }
+    }
+  },
+  "statPaceNew": "We start with a typical pace and learn yours as you finish books.",
+  "statPaceLearned": "A 300-page book would get about {days} days.",
+  "@statPaceLearned": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "statConfidence": "How well we know your pace"
 }

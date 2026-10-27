@@ -57,6 +57,7 @@ String loanEventLabel(AppLocalizations l10n, LoanEvent e, bool byMe) {
     'extension_accepted' => l10n.eventExtensionAccepted,
     'extension_declined' => l10n.eventExtensionDeclined,
     'returned' => l10n.eventReturned,
+    'expired' => l10n.eventExpired,
     _ => e.type,
   };
 }
