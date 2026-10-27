@@ -4,6 +4,10 @@ import 'package:go_router/go_router.dart';
 
 import '../features/auth/auth_screen.dart';
 import '../features/discover/discover_screen.dart';
+import '../features/library/item_detail_screen.dart';
+import '../features/library/manual_book_screen.dart';
+import '../features/library/scan_screen.dart';
+import '../features/library/search_book_screen.dart';
 import '../features/library/shelf_screen.dart';
 import '../features/loans/loans_screen.dart';
 import '../features/me/me_screen.dart';
@@ -11,12 +15,15 @@ import '../features/onboarding/onboarding_screen.dart';
 import '../features/shell/home_shell.dart';
 import 'auth_stage.dart';
 
+final _rootKey = GlobalKey<NavigatorState>();
+
 final routerProvider = Provider<GoRouter>((ref) {
   final stage = ValueNotifier(ref.read(authStageProvider));
   ref.listen(authStageProvider, (_, next) => stage.value = next);
   ref.onDispose(stage.dispose);
 
   return GoRouter(
+    navigatorKey: _rootKey,
     initialLocation: '/shelf',
     refreshListenable: stage,
     redirect: (context, state) {
@@ -45,7 +52,36 @@ final routerProvider = Provider<GoRouter>((ref) {
         branches: [
           StatefulShellBranch(
             routes: [
-              GoRoute(path: '/shelf', builder: (_, _) => const ShelfScreen()),
+              GoRoute(
+                path: '/shelf',
+                builder: (_, _) => const ShelfScreen(),
+                routes: [
+                  // Full-screen pages above the tab bar.
+                  GoRoute(
+                    path: 'add/search',
+                    parentNavigatorKey: _rootKey,
+                    builder: (_, _) => const SearchBookScreen(),
+                  ),
+                  GoRoute(
+                    path: 'add/scan',
+                    parentNavigatorKey: _rootKey,
+                    builder: (_, _) => const ScanScreen(),
+                  ),
+                  GoRoute(
+                    path: 'add/manual',
+                    parentNavigatorKey: _rootKey,
+                    builder: (_, state) => ManualBookScreen(
+                      isbn: state.uri.queryParameters['isbn'],
+                    ),
+                  ),
+                  GoRoute(
+                    path: 'item/:id',
+                    parentNavigatorKey: _rootKey,
+                    builder: (_, state) =>
+                        ItemDetailScreen(itemId: state.pathParameters['id']!),
+                  ),
+                ],
+              ),
             ],
           ),
           StatefulShellBranch(

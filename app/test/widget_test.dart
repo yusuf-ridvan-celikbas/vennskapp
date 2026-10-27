@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:vennskapp/app.dart';
 import 'package:vennskapp/core/auth_stage.dart';
+import 'package:vennskapp/features/library/library_repository.dart';
 
 void main() {
   Future<void> pumpAt(
@@ -15,7 +16,10 @@ void main() {
     addTearDown(tester.view.reset);
     await tester.pumpWidget(
       ProviderScope(
-        overrides: [authStageProvider.overrideWithValue(stage)],
+        overrides: [
+          authStageProvider.overrideWithValue(stage),
+          myShelfProvider.overrideWith((ref) async => const []),
+        ],
         child: const VennskApp(),
       ),
     );

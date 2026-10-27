@@ -2,7 +2,7 @@
 
 Your neighbors' bookshelves, one shared library. Lend and borrow books with friends and neighbors: no buying, no selling.
 
-Prototype status: **M1 (sign-up, profile, home area)**. See [docs/PLAN.md](docs/PLAN.md) for the full plan and milestones.
+Prototype status: **M2 (your library: search, scan, manual entry)**. See [docs/PLAN.md](docs/PLAN.md) for the full plan and milestones.
 
 ## Stack
 - `app/` is the Flutter app (Android + web first). It uses Riverpod, go_router and `gen-l10n` (ARB files in `app/lib/l10n`).
@@ -28,6 +28,8 @@ cp env/local.example.json env/local.json   # paste the publishable key into SUPA
 flutter run -d chrome  --dart-define-from-file=env/local.json
 flutter run -d emulator-5554 --dart-define-from-file=env/local.json
 ```
+Optional: put a free Google Books API key in `GOOGLE_BOOKS_API_KEY` (Google Cloud console → enable "Books API" → create an API key). It is only a fallback when Open Library doesn't know a book; without it, the fallback is skipped.
+
 On the Android emulator, the host machine is reachable as `10.0.2.2`. Set `SUPABASE_URL` to `http://10.0.2.2:54321` in a separate env file, e.g. `env/android.json`.
 
 Supabase Studio (database UI): http://127.0.0.1:54323 · Mailpit (local emails): http://127.0.0.1:54324

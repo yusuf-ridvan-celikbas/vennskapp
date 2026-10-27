@@ -1,4 +1,5 @@
 {
   "SUPABASE_URL": "http://127.0.0.1:54321",
-  "SUPABASE_ANON_KEY": "paste the anon/publishable key printed by: npx supabase status"
+  "SUPABASE_ANON_KEY": "paste the anon/publishable key printed by: npx supabase status",
+  "GOOGLE_BOOKS_API_KEY": ""
 }

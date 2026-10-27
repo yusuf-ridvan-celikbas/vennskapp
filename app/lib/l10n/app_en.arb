@@ -100,5 +100,105 @@
         "type": "int"
       }
     }
-  }
+  },
+  "addBook": "Add book",
+  "addScan": "Scan barcodes",
+  "addScanHelp": "Fastest way to fill your shelf: scan one book after another.",
+  "addSearch": "Search",
+  "addSearchHelp": "Find a book by title, author or ISBN.",
+  "addManual": "Enter manually",
+  "addManualHelp": "For books without an ISBN, or when search can't find them.",
+  "addToShelf": "Add to my shelf",
+  "addedToShelf": "Added “{title}” to your shelf",
+  "@addedToShelf": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "alreadyOnShelf": "“{title}” is already on your shelf",
+  "@alreadyOnShelf": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "onYourShelf": "On your shelf",
+  "undo": "Undo",
+  "cancel": "Cancel",
+  "ok": "OK",
+  "done": "Done",
+  "remove": "Remove",
+  "shelfFilterAll": "All ({count})",
+  "@shelfFilterAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statusUnread": "Not read yet",
+  "statusReading": "Reading",
+  "statusRead": "Read",
+  "pageCount": "{count, plural, =1{1 page} other{{count} pages}}",
+  "@pageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "searchHint": "Title, author or ISBN",
+  "searchNoResults": "We couldn't find that book. You can add it yourself.",
+  "scanTypeIsbn": "Type an ISBN",
+  "scanInvalidIsbn": "That doesn't look like a valid ISBN.",
+  "scanTorch": "Flashlight",
+  "scanCameraError": "The camera isn't available. Check camera permission, or type the ISBN instead.",
+  "scanHint": "Point the camera at the barcode on the back of a book. Keep going: each book is added automatically.",
+  "scanAddedCount": "{count, plural, =0{No books added yet} =1{1 book added} other{{count} books added}}",
+  "@scanAddedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "scanLookingUp": "Looking up…",
+  "scanAdded": "Added",
+  "scanNotFound": "Not found online",
+  "scanFailed": "Couldn't add",
+  "manualTitle": "Title",
+  "manualAuthors": "Author(s)",
+  "manualAuthorsHelp": "Separate several authors with commas.",
+  "manualIsbn": "ISBN (optional)",
+  "manualPages": "Pages",
+  "manualYear": "Year",
+  "manualNumberInvalid": "Please enter a valid number.",
+  "detailStatus": "My reading",
+  "detailRating": "My rating",
+  "detailStars": "{count, plural, =1{1 star} other{{count} stars}}",
+  "@detailStars": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "detailReview": "My thoughts",
+  "detailReviewHint": "A few words for your neighbors (optional)",
+  "detailLendable": "Happy to lend this book",
+  "detailLendableHelp": "Neighbors who can see it may ask to borrow it.",
+  "detailVisibility": "Who can see this book",
+  "detailVisibilityDefault": "My default ({level})",
+  "@detailVisibilityDefault": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "removeTitle": "Remove from shelf?",
+  "removeBody": "Your rating and thoughts about this book will be removed too."
 }

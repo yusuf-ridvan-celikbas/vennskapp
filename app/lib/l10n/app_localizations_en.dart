@@ -214,4 +214,197 @@ class AppLocalizationsEn extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get addBook => 'Add book';
+
+  @override
+  String get addScan => 'Scan barcodes';
+
+  @override
+  String get addScanHelp =>
+      'Fastest way to fill your shelf: scan one book after another.';
+
+  @override
+  String get addSearch => 'Search';
+
+  @override
+  String get addSearchHelp => 'Find a book by title, author or ISBN.';
+
+  @override
+  String get addManual => 'Enter manually';
+
+  @override
+  String get addManualHelp =>
+      'For books without an ISBN, or when search can\'t find them.';
+
+  @override
+  String get addToShelf => 'Add to my shelf';
+
+  @override
+  String addedToShelf(String title) {
+    return 'Added “$title” to your shelf';
+  }
+
+  @override
+  String alreadyOnShelf(String title) {
+    return '“$title” is already on your shelf';
+  }
+
+  @override
+  String get onYourShelf => 'On your shelf';
+
+  @override
+  String get undo => 'Undo';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get done => 'Done';
+
+  @override
+  String get remove => 'Remove';
+
+  @override
+  String shelfFilterAll(int count) {
+    return 'All ($count)';
+  }
+
+  @override
+  String get statusUnread => 'Not read yet';
+
+  @override
+  String get statusReading => 'Reading';
+
+  @override
+  String get statusRead => 'Read';
+
+  @override
+  String pageCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pages',
+      one: '1 page',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get searchHint => 'Title, author or ISBN';
+
+  @override
+  String get searchNoResults =>
+      'We couldn\'t find that book. You can add it yourself.';
+
+  @override
+  String get scanTypeIsbn => 'Type an ISBN';
+
+  @override
+  String get scanInvalidIsbn => 'That doesn\'t look like a valid ISBN.';
+
+  @override
+  String get scanTorch => 'Flashlight';
+
+  @override
+  String get scanCameraError =>
+      'The camera isn\'t available. Check camera permission, or type the ISBN instead.';
+
+  @override
+  String get scanHint =>
+      'Point the camera at the barcode on the back of a book. Keep going: each book is added automatically.';
+
+  @override
+  String scanAddedCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count books added',
+      one: '1 book added',
+      zero: 'No books added yet',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get scanLookingUp => 'Looking up…';
+
+  @override
+  String get scanAdded => 'Added';
+
+  @override
+  String get scanNotFound => 'Not found online';
+
+  @override
+  String get scanFailed => 'Couldn\'t add';
+
+  @override
+  String get manualTitle => 'Title';
+
+  @override
+  String get manualAuthors => 'Author(s)';
+
+  @override
+  String get manualAuthorsHelp => 'Separate several authors with commas.';
+
+  @override
+  String get manualIsbn => 'ISBN (optional)';
+
+  @override
+  String get manualPages => 'Pages';
+
+  @override
+  String get manualYear => 'Year';
+
+  @override
+  String get manualNumberInvalid => 'Please enter a valid number.';
+
+  @override
+  String get detailStatus => 'My reading';
+
+  @override
+  String get detailRating => 'My rating';
+
+  @override
+  String detailStars(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count stars',
+      one: '1 star',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get detailReview => 'My thoughts';
+
+  @override
+  String get detailReviewHint => 'A few words for your neighbors (optional)';
+
+  @override
+  String get detailLendable => 'Happy to lend this book';
+
+  @override
+  String get detailLendableHelp =>
+      'Neighbors who can see it may ask to borrow it.';
+
+  @override
+  String get detailVisibility => 'Who can see this book';
+
+  @override
+  String detailVisibilityDefault(String level) {
+    return 'My default ($level)';
+  }
+
+  @override
+  String get removeTitle => 'Remove from shelf?';
+
+  @override
+  String get removeBody =>
+      'Your rating and thoughts about this book will be removed too.';
 }

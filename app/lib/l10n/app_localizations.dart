@@ -435,6 +435,312 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count, plural, =0{No thumbs-up yet} =1{1 thumbs-up from neighbors} other{{count} thumbs-up from neighbors}}'**
   String meThumbsUp(int count);
+
+  /// No description provided for @addBook.
+  ///
+  /// In en, this message translates to:
+  /// **'Add book'**
+  String get addBook;
+
+  /// No description provided for @addScan.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan barcodes'**
+  String get addScan;
+
+  /// No description provided for @addScanHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Fastest way to fill your shelf: scan one book after another.'**
+  String get addScanHelp;
+
+  /// No description provided for @addSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get addSearch;
+
+  /// No description provided for @addSearchHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Find a book by title, author or ISBN.'**
+  String get addSearchHelp;
+
+  /// No description provided for @addManual.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter manually'**
+  String get addManual;
+
+  /// No description provided for @addManualHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'For books without an ISBN, or when search can\'t find them.'**
+  String get addManualHelp;
+
+  /// No description provided for @addToShelf.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to my shelf'**
+  String get addToShelf;
+
+  /// No description provided for @addedToShelf.
+  ///
+  /// In en, this message translates to:
+  /// **'Added “{title}” to your shelf'**
+  String addedToShelf(String title);
+
+  /// No description provided for @alreadyOnShelf.
+  ///
+  /// In en, this message translates to:
+  /// **'“{title}” is already on your shelf'**
+  String alreadyOnShelf(String title);
+
+  /// No description provided for @onYourShelf.
+  ///
+  /// In en, this message translates to:
+  /// **'On your shelf'**
+  String get onYourShelf;
+
+  /// No description provided for @undo.
+  ///
+  /// In en, this message translates to:
+  /// **'Undo'**
+  String get undo;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @ok.
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get ok;
+
+  /// No description provided for @done.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get done;
+
+  /// No description provided for @remove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove'**
+  String get remove;
+
+  /// No description provided for @shelfFilterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All ({count})'**
+  String shelfFilterAll(int count);
+
+  /// No description provided for @statusUnread.
+  ///
+  /// In en, this message translates to:
+  /// **'Not read yet'**
+  String get statusUnread;
+
+  /// No description provided for @statusReading.
+  ///
+  /// In en, this message translates to:
+  /// **'Reading'**
+  String get statusReading;
+
+  /// No description provided for @statusRead.
+  ///
+  /// In en, this message translates to:
+  /// **'Read'**
+  String get statusRead;
+
+  /// No description provided for @pageCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 page} other{{count} pages}}'**
+  String pageCount(int count);
+
+  /// No description provided for @searchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Title, author or ISBN'**
+  String get searchHint;
+
+  /// No description provided for @searchNoResults.
+  ///
+  /// In en, this message translates to:
+  /// **'We couldn\'t find that book. You can add it yourself.'**
+  String get searchNoResults;
+
+  /// No description provided for @scanTypeIsbn.
+  ///
+  /// In en, this message translates to:
+  /// **'Type an ISBN'**
+  String get scanTypeIsbn;
+
+  /// No description provided for @scanInvalidIsbn.
+  ///
+  /// In en, this message translates to:
+  /// **'That doesn\'t look like a valid ISBN.'**
+  String get scanInvalidIsbn;
+
+  /// No description provided for @scanTorch.
+  ///
+  /// In en, this message translates to:
+  /// **'Flashlight'**
+  String get scanTorch;
+
+  /// No description provided for @scanCameraError.
+  ///
+  /// In en, this message translates to:
+  /// **'The camera isn\'t available. Check camera permission, or type the ISBN instead.'**
+  String get scanCameraError;
+
+  /// No description provided for @scanHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Point the camera at the barcode on the back of a book. Keep going: each book is added automatically.'**
+  String get scanHint;
+
+  /// No description provided for @scanAddedCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No books added yet} =1{1 book added} other{{count} books added}}'**
+  String scanAddedCount(int count);
+
+  /// No description provided for @scanLookingUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Looking up…'**
+  String get scanLookingUp;
+
+  /// No description provided for @scanAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'Added'**
+  String get scanAdded;
+
+  /// No description provided for @scanNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Not found online'**
+  String get scanNotFound;
+
+  /// No description provided for @scanFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t add'**
+  String get scanFailed;
+
+  /// No description provided for @manualTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get manualTitle;
+
+  /// No description provided for @manualAuthors.
+  ///
+  /// In en, this message translates to:
+  /// **'Author(s)'**
+  String get manualAuthors;
+
+  /// No description provided for @manualAuthorsHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Separate several authors with commas.'**
+  String get manualAuthorsHelp;
+
+  /// No description provided for @manualIsbn.
+  ///
+  /// In en, this message translates to:
+  /// **'ISBN (optional)'**
+  String get manualIsbn;
+
+  /// No description provided for @manualPages.
+  ///
+  /// In en, this message translates to:
+  /// **'Pages'**
+  String get manualPages;
+
+  /// No description provided for @manualYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Year'**
+  String get manualYear;
+
+  /// No description provided for @manualNumberInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid number.'**
+  String get manualNumberInvalid;
+
+  /// No description provided for @detailStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'My reading'**
+  String get detailStatus;
+
+  /// No description provided for @detailRating.
+  ///
+  /// In en, this message translates to:
+  /// **'My rating'**
+  String get detailRating;
+
+  /// No description provided for @detailStars.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 star} other{{count} stars}}'**
+  String detailStars(int count);
+
+  /// No description provided for @detailReview.
+  ///
+  /// In en, this message translates to:
+  /// **'My thoughts'**
+  String get detailReview;
+
+  /// No description provided for @detailReviewHint.
+  ///
+  /// In en, this message translates to:
+  /// **'A few words for your neighbors (optional)'**
+  String get detailReviewHint;
+
+  /// No description provided for @detailLendable.
+  ///
+  /// In en, this message translates to:
+  /// **'Happy to lend this book'**
+  String get detailLendable;
+
+  /// No description provided for @detailLendableHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Neighbors who can see it may ask to borrow it.'**
+  String get detailLendableHelp;
+
+  /// No description provided for @detailVisibility.
+  ///
+  /// In en, this message translates to:
+  /// **'Who can see this book'**
+  String get detailVisibility;
+
+  /// No description provided for @detailVisibilityDefault.
+  ///
+  /// In en, this message translates to:
+  /// **'My default ({level})'**
+  String detailVisibilityDefault(String level);
+
+  /// No description provided for @removeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from shelf?'**
+  String get removeTitle;
+
+  /// No description provided for @removeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your rating and thoughts about this book will be removed too.'**
+  String get removeBody;
 }
 
 class _AppLocalizationsDelegate
