@@ -741,6 +741,276 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your rating and thoughts about this book will be removed too.'**
   String get removeBody;
+
+  /// No description provided for @discoverHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Which book are you looking for?'**
+  String get discoverHint;
+
+  /// No description provided for @discoverAroundYou.
+  ///
+  /// In en, this message translates to:
+  /// **'Books on shelves around you'**
+  String get discoverAroundYou;
+
+  /// No description provided for @discoverResults.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 book found} other{{count} books found}}'**
+  String discoverResults(int count);
+
+  /// No description provided for @discoverNothingNearbyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No shared shelves yet'**
+  String get discoverNothingNearbyTitle;
+
+  /// No description provided for @discoverNothingNearbyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'When friends and neighbors add books, they show up here. Invite a friend to get started!'**
+  String get discoverNothingNearbyBody;
+
+  /// No description provided for @discoverNoMatchTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Nobody nearby has this one yet'**
+  String get discoverNoMatchTitle;
+
+  /// No description provided for @discoverNoMatchBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Try another title or author, or add friends to see more shelves.'**
+  String get discoverNoMatchBody;
+
+  /// No description provided for @countFriends.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No friends yet} =1{1 friend} other{{count} friends}}'**
+  String countFriends(int count);
+
+  /// No description provided for @countNeighbors.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 neighbor} other{{count} neighbors}}'**
+  String countNeighbors(int count);
+
+  /// No description provided for @countOthers.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 more} other{{count} more}}'**
+  String countOthers(int count);
+
+  /// No description provided for @countCanLend.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 can lend it} other{{count} can lend it}}'**
+  String countCanLend(int count);
+
+  /// No description provided for @holdersCanLend.
+  ///
+  /// In en, this message translates to:
+  /// **'Can lend it'**
+  String get holdersCanLend;
+
+  /// No description provided for @holdersNotLending.
+  ///
+  /// In en, this message translates to:
+  /// **'Also on their shelves (not lending right now)'**
+  String get holdersNotLending;
+
+  /// No description provided for @holdersNone.
+  ///
+  /// In en, this message translates to:
+  /// **'Nobody you can see has this book right now.'**
+  String get holdersNone;
+
+  /// No description provided for @relFriend.
+  ///
+  /// In en, this message translates to:
+  /// **'Friend'**
+  String get relFriend;
+
+  /// No description provided for @relNeighbor.
+  ///
+  /// In en, this message translates to:
+  /// **'Neighbor'**
+  String get relNeighbor;
+
+  /// No description provided for @relOther.
+  ///
+  /// In en, this message translates to:
+  /// **'On VennskApp'**
+  String get relOther;
+
+  /// No description provided for @relYou.
+  ///
+  /// In en, this message translates to:
+  /// **'You'**
+  String get relYou;
+
+  /// No description provided for @distanceSameArea.
+  ///
+  /// In en, this message translates to:
+  /// **'same area'**
+  String get distanceSameArea;
+
+  /// No description provided for @distanceKm.
+  ///
+  /// In en, this message translates to:
+  /// **'~{km} km'**
+  String distanceKm(int km);
+
+  /// No description provided for @personNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'This person isn\'t available.'**
+  String get personNotFound;
+
+  /// No description provided for @personPrivateNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Their profile is private. You can still see books they chose to share.'**
+  String get personPrivateNote;
+
+  /// No description provided for @personShelf.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 book you can see} other{{count} books you can see}}'**
+  String personShelf(int count);
+
+  /// No description provided for @personShelfEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No books shared with you yet.'**
+  String get personShelfEmpty;
+
+  /// No description provided for @friendsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Friends'**
+  String get friendsTitle;
+
+  /// No description provided for @friendsAdd.
+  ///
+  /// In en, this message translates to:
+  /// **'Add friend'**
+  String get friendsAdd;
+
+  /// No description provided for @friendsAddHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Know someone on VennskApp? Add them by their username.'**
+  String get friendsAddHelp;
+
+  /// No description provided for @friendsIncoming.
+  ///
+  /// In en, this message translates to:
+  /// **'Friend requests'**
+  String get friendsIncoming;
+
+  /// No description provided for @friendsIncomingCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 new request} other{{count} new requests}}'**
+  String friendsIncomingCount(int count);
+
+  /// No description provided for @friendsList.
+  ///
+  /// In en, this message translates to:
+  /// **'Your friends'**
+  String get friendsList;
+
+  /// No description provided for @friendsOutgoing.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for an answer'**
+  String get friendsOutgoing;
+
+  /// No description provided for @friendsBlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Blocked'**
+  String get friendsBlocked;
+
+  /// No description provided for @friendsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No friends yet. Friends can see the books you share with friends.'**
+  String get friendsEmpty;
+
+  /// No description provided for @friendRequestSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Friend request sent to @{name}'**
+  String friendRequestSent(String name);
+
+  /// No description provided for @friendNowFriends.
+  ///
+  /// In en, this message translates to:
+  /// **'You and @{name} are now friends!'**
+  String friendNowFriends(String name);
+
+  /// No description provided for @friendNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No one with the username @{name}'**
+  String friendNotFound(String name);
+
+  /// No description provided for @friendIsMe.
+  ///
+  /// In en, this message translates to:
+  /// **'That\'s you!'**
+  String get friendIsMe;
+
+  /// No description provided for @friendAccept.
+  ///
+  /// In en, this message translates to:
+  /// **'Accept'**
+  String get friendAccept;
+
+  /// No description provided for @friendDecline.
+  ///
+  /// In en, this message translates to:
+  /// **'Decline'**
+  String get friendDecline;
+
+  /// No description provided for @friendRequestSentCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Request sent · Cancel'**
+  String get friendRequestSentCancel;
+
+  /// No description provided for @unfriend.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove friend'**
+  String get unfriend;
+
+  /// No description provided for @block.
+  ///
+  /// In en, this message translates to:
+  /// **'Block'**
+  String get block;
+
+  /// No description provided for @unblock.
+  ///
+  /// In en, this message translates to:
+  /// **'Unblock'**
+  String get unblock;
+
+  /// No description provided for @blockTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Block {name}?'**
+  String blockTitle(String name);
+
+  /// No description provided for @blockBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You won\'t see each other\'s books or profiles, and they can\'t send you requests. They won\'t be told.'**
+  String get blockBody;
 }
 
 class _AppLocalizationsDelegate

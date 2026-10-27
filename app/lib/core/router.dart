@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../features/auth/auth_screen.dart';
+import '../features/discover/book_holders_screen.dart';
 import '../features/discover/discover_screen.dart';
 import '../features/library/item_detail_screen.dart';
 import '../features/library/manual_book_screen.dart';
@@ -13,6 +14,8 @@ import '../features/loans/loans_screen.dart';
 import '../features/me/me_screen.dart';
 import '../features/onboarding/onboarding_screen.dart';
 import '../features/shell/home_shell.dart';
+import '../features/social/friends_screen.dart';
+import '../features/social/person_screen.dart';
 import 'auth_stage.dart';
 
 final _rootKey = GlobalKey<NavigatorState>();
@@ -34,10 +37,19 @@ final routerProvider = Provider<GoRouter>((ref) {
         AuthStage.needsOnboarding => '/onboarding',
         AuthStage.ready => null,
       };
-      if (target != null) return here == target ? null : target;
-      // Ready: leave the gate screens for the app.
       const gates = {'/loading', '/welcome', '/onboarding'};
-      return gates.contains(here) ? '/shelf' : null;
+      // Remember where the user was heading (e.g. after a page reload) so
+      // they land there once signed in, instead of on the shelf.
+      final from = gates.contains(here)
+          ? state.uri.queryParameters['from']
+          : state.uri.toString();
+      if (target != null) {
+        if (here == target) return null;
+        return from == null || from == '/shelf'
+            ? target
+            : Uri(path: target, queryParameters: {'from': from}).toString();
+      }
+      return gates.contains(here) ? (from ?? '/shelf') : null;
     },
     routes: [
       GoRoute(
@@ -47,6 +59,11 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(path: '/welcome', builder: (_, _) => const AuthScreen()),
       GoRoute(path: '/onboarding', builder: (_, _) => const OnboardingScreen()),
+      GoRoute(
+        path: '/people/:id',
+        builder: (_, state) =>
+            PersonScreen(userId: state.pathParameters['id']!),
+      ),
       StatefulShellRoute.indexedStack(
         builder: (context, state, shell) => HomeShell(shell: shell),
         branches: [
@@ -89,6 +106,14 @@ final routerProvider = Provider<GoRouter>((ref) {
               GoRoute(
                 path: '/discover',
                 builder: (_, _) => const DiscoverScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'book/:id',
+                    parentNavigatorKey: _rootKey,
+                    builder: (_, state) =>
+                        BookHoldersScreen(bookId: state.pathParameters['id']!),
+                  ),
+                ],
               ),
             ],
           ),
@@ -98,7 +123,19 @@ final routerProvider = Provider<GoRouter>((ref) {
             ],
           ),
           StatefulShellBranch(
-            routes: [GoRoute(path: '/me', builder: (_, _) => const MeScreen())],
+            routes: [
+              GoRoute(
+                path: '/me',
+                builder: (_, _) => const MeScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'friends',
+                    parentNavigatorKey: _rootKey,
+                    builder: (_, _) => const FriendsScreen(),
+                  ),
+                ],
+              ),
+            ],
           ),
         ],
       ),

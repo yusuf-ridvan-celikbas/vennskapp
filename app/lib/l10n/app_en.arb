@@ -200,5 +200,134 @@
     }
   },
   "removeTitle": "Remove from shelf?",
-  "removeBody": "Your rating and thoughts about this book will be removed too."
+  "removeBody": "Your rating and thoughts about this book will be removed too.",
+  "discoverHint": "Which book are you looking for?",
+  "discoverAroundYou": "Books on shelves around you",
+  "discoverResults": "{count, plural, =1{1 book found} other{{count} books found}}",
+  "@discoverResults": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "discoverNothingNearbyTitle": "No shared shelves yet",
+  "discoverNothingNearbyBody": "When friends and neighbors add books, they show up here. Invite a friend to get started!",
+  "discoverNoMatchTitle": "Nobody nearby has this one yet",
+  "discoverNoMatchBody": "Try another title or author, or add friends to see more shelves.",
+  "countFriends": "{count, plural, =0{No friends yet} =1{1 friend} other{{count} friends}}",
+  "@countFriends": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "countNeighbors": "{count, plural, =1{1 neighbor} other{{count} neighbors}}",
+  "@countNeighbors": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "countOthers": "{count, plural, =1{1 more} other{{count} more}}",
+  "@countOthers": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "countCanLend": "{count, plural, =1{1 can lend it} other{{count} can lend it}}",
+  "@countCanLend": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "holdersCanLend": "Can lend it",
+  "holdersNotLending": "Also on their shelves (not lending right now)",
+  "holdersNone": "Nobody you can see has this book right now.",
+  "relFriend": "Friend",
+  "relNeighbor": "Neighbor",
+  "relOther": "On VennskApp",
+  "relYou": "You",
+  "distanceSameArea": "same area",
+  "distanceKm": "~{km} km",
+  "@distanceKm": {
+    "placeholders": {
+      "km": {
+        "type": "int"
+      }
+    }
+  },
+  "personNotFound": "This person isn't available.",
+  "personPrivateNote": "Their profile is private. You can still see books they chose to share.",
+  "personShelf": "{count, plural, =1{1 book you can see} other{{count} books you can see}}",
+  "@personShelf": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "personShelfEmpty": "No books shared with you yet.",
+  "friendsTitle": "Friends",
+  "friendsAdd": "Add friend",
+  "friendsAddHelp": "Know someone on VennskApp? Add them by their username.",
+  "friendsIncoming": "Friend requests",
+  "friendsIncomingCount": "{count, plural, =1{1 new request} other{{count} new requests}}",
+  "@friendsIncomingCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "friendsList": "Your friends",
+  "friendsOutgoing": "Waiting for an answer",
+  "friendsBlocked": "Blocked",
+  "friendsEmpty": "No friends yet. Friends can see the books you share with friends.",
+  "friendRequestSent": "Friend request sent to @{name}",
+  "@friendRequestSent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "friendNowFriends": "You and @{name} are now friends!",
+  "@friendNowFriends": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "friendNotFound": "No one with the username @{name}",
+  "@friendNotFound": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "friendIsMe": "That's you!",
+  "friendAccept": "Accept",
+  "friendDecline": "Decline",
+  "friendRequestSentCancel": "Request sent · Cancel",
+  "unfriend": "Remove friend",
+  "block": "Block",
+  "unblock": "Unblock",
+  "blockTitle": "Block {name}?",
+  "@blockTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "blockBody": "You won't see each other's books or profiles, and they can't send you requests. They won't be told."
 }

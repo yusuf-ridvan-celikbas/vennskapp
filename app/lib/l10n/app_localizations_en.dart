@@ -407,4 +407,213 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get removeBody =>
       'Your rating and thoughts about this book will be removed too.';
+
+  @override
+  String get discoverHint => 'Which book are you looking for?';
+
+  @override
+  String get discoverAroundYou => 'Books on shelves around you';
+
+  @override
+  String discoverResults(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count books found',
+      one: '1 book found',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get discoverNothingNearbyTitle => 'No shared shelves yet';
+
+  @override
+  String get discoverNothingNearbyBody =>
+      'When friends and neighbors add books, they show up here. Invite a friend to get started!';
+
+  @override
+  String get discoverNoMatchTitle => 'Nobody nearby has this one yet';
+
+  @override
+  String get discoverNoMatchBody =>
+      'Try another title or author, or add friends to see more shelves.';
+
+  @override
+  String countFriends(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count friends',
+      one: '1 friend',
+      zero: 'No friends yet',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String countNeighbors(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count neighbors',
+      one: '1 neighbor',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String countOthers(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count more',
+      one: '1 more',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String countCanLend(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count can lend it',
+      one: '1 can lend it',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get holdersCanLend => 'Can lend it';
+
+  @override
+  String get holdersNotLending =>
+      'Also on their shelves (not lending right now)';
+
+  @override
+  String get holdersNone => 'Nobody you can see has this book right now.';
+
+  @override
+  String get relFriend => 'Friend';
+
+  @override
+  String get relNeighbor => 'Neighbor';
+
+  @override
+  String get relOther => 'On VennskApp';
+
+  @override
+  String get relYou => 'You';
+
+  @override
+  String get distanceSameArea => 'same area';
+
+  @override
+  String distanceKm(int km) {
+    return '~$km km';
+  }
+
+  @override
+  String get personNotFound => 'This person isn\'t available.';
+
+  @override
+  String get personPrivateNote =>
+      'Their profile is private. You can still see books they chose to share.';
+
+  @override
+  String personShelf(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count books you can see',
+      one: '1 book you can see',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get personShelfEmpty => 'No books shared with you yet.';
+
+  @override
+  String get friendsTitle => 'Friends';
+
+  @override
+  String get friendsAdd => 'Add friend';
+
+  @override
+  String get friendsAddHelp =>
+      'Know someone on VennskApp? Add them by their username.';
+
+  @override
+  String get friendsIncoming => 'Friend requests';
+
+  @override
+  String friendsIncomingCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count new requests',
+      one: '1 new request',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get friendsList => 'Your friends';
+
+  @override
+  String get friendsOutgoing => 'Waiting for an answer';
+
+  @override
+  String get friendsBlocked => 'Blocked';
+
+  @override
+  String get friendsEmpty =>
+      'No friends yet. Friends can see the books you share with friends.';
+
+  @override
+  String friendRequestSent(String name) {
+    return 'Friend request sent to @$name';
+  }
+
+  @override
+  String friendNowFriends(String name) {
+    return 'You and @$name are now friends!';
+  }
+
+  @override
+  String friendNotFound(String name) {
+    return 'No one with the username @$name';
+  }
+
+  @override
+  String get friendIsMe => 'That\'s you!';
+
+  @override
+  String get friendAccept => 'Accept';
+
+  @override
+  String get friendDecline => 'Decline';
+
+  @override
+  String get friendRequestSentCancel => 'Request sent · Cancel';
+
+  @override
+  String get unfriend => 'Remove friend';
+
+  @override
+  String get block => 'Block';
+
+  @override
+  String get unblock => 'Unblock';
+
+  @override
+  String blockTitle(String name) {
+    return 'Block $name?';
+  }
+
+  @override
+  String get blockBody =>
+      'You won\'t see each other\'s books or profiles, and they can\'t send you requests. They won\'t be told.';
 }

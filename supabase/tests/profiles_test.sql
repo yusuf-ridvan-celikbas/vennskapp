@@ -7,7 +7,7 @@ insert into auth.users (id, email, raw_user_meta_data)
 values ('11111111-1111-1111-1111-111111111111', 'a@test.local', '{"adult_confirmed": true}'),
        ('22222222-2222-2222-2222-222222222222', 'b@test.local', '{}');
 
-select is((select count(*)::int from public.profiles), 2, 'trigger creates a profile per user');
+select is((select count(*)::int from public.profiles where id in ('11111111-1111-1111-1111-111111111111', '22222222-2222-2222-2222-222222222222')), 2, 'trigger creates a profile per user');
 select is((select adult_confirmed from public.profiles
            where id = '11111111-1111-1111-1111-111111111111'),
           true, 'adult flag is copied from sign-up metadata');

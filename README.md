@@ -2,7 +2,7 @@
 
 Your neighbors' bookshelves, one shared library. Lend and borrow books with friends and neighbors: no buying, no selling.
 
-Prototype status: **M2 (your library: search, scan, manual entry)**. See [docs/PLAN.md](docs/PLAN.md) for the full plan and milestones.
+Prototype status: **M3 (friends, visibility rules, discovery)**. See [docs/PLAN.md](docs/PLAN.md) for the full plan and milestones.
 
 ## Stack
 - `app/` is the Flutter app (Android + web first). It uses Riverpod, go_router and `gen-l10n` (ARB files in `app/lib/l10n`).
@@ -48,3 +48,13 @@ All UI text lives in `app/lib/l10n/app_<locale>.arb`, with English (`app_en.arb`
 - Migrations: `supabase/migrations/`. Apply them with `npx supabase@2 db reset`, which also wipes local data.
 - Tests: `npx supabase@2 test db` (pgTAP files in `supabase/tests/`).
 - Exact locations are never stored. `set_home_location` snaps the pin to a ~1 km grid cell and saves it in `profile_locations`, which no user can read directly.
+
+## Demo data
+`supabase/seed.sql` creates 12 fake people with books: 5 neighbors around Küçükçekmece, 3 elsewhere in Istanbul, and 4 in Oslo/Bergen, with mixed visibility settings and a few friendships between them. It runs automatically after `db reset`. To add it without wiping your own account, run:
+```sh
+docker exec -i supabase_db_vennskapp psql -U postgres < supabase/seed.sql
+```
+Demo accounts sign in as `<username>@demo.vennskapp.test`, for example `ayse@demo.vennskapp.test`. The shared local test password is in `seed.sql`.
+
+To apply new migrations without losing data, use `npx supabase@2 migration up` instead of `db reset`.
+
