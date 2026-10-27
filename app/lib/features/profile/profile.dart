@@ -38,16 +38,18 @@ class Profile {
       username != null && displayName != null && areaName != null;
 
   factory Profile.fromJson(Map<String, dynamic> json) => Profile(
-        id: json['id'] as String,
-        username: json['username'] as String?,
-        displayName: json['display_name'] as String?,
-        areaName: json['area_name'] as String?,
-        locale: json['locale'] as String,
-        defaultVisibility:
-            VisibilityLevel.fromDb(json['default_visibility'] as String),
-        profileVisibility:
-            VisibilityLevel.fromDb(json['profile_visibility'] as String),
-        thumbsUp: json['thumbs_up'] as int,
-        thumbsDown: json['thumbs_down'] as int,
-      );
+    id: json['id'] as String,
+    username: json['username'] as String?,
+    displayName: json['display_name'] as String?,
+    areaName: json['area_name'] as String?,
+    locale: json['locale'] as String,
+    defaultVisibility: VisibilityLevel.fromDb(
+      json['default_visibility'] as String,
+    ),
+    profileVisibility: VisibilityLevel.fromDb(
+      json['profile_visibility'] as String,
+    ),
+    thumbsUp: json['thumbs_up'] as int,
+    thumbsDown: json['thumbs_down'] as int,
+  );
 }

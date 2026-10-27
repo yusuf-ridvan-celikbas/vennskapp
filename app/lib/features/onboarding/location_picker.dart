@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:vennskapp/l10n/app_localizations.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
@@ -7,8 +7,11 @@ import 'package:latlong2/latlong.dart';
 /// Map where the user taps (or uses their location) to mark their home area.
 /// The exact point never leaves the device; the server snaps it to ~1 km.
 class LocationPicker extends StatefulWidget {
-  const LocationPicker(
-      {super.key, required this.value, required this.onChanged});
+  const LocationPicker({
+    super.key,
+    required this.value,
+    required this.onChanged,
+  });
 
   final LatLng? value;
   final ValueChanged<LatLng> onChanged;
@@ -36,8 +39,9 @@ class _LocationPickerState extends State<LocationPicker> {
         return;
       }
       final pos = await Geolocator.getCurrentPosition(
-        locationSettings:
-            const LocationSettings(accuracy: LocationAccuracy.low),
+        locationSettings: const LocationSettings(
+          accuracy: LocationAccuracy.low,
+        ),
       );
       final point = LatLng(pos.latitude, pos.longitude);
       widget.onChanged(point);
@@ -74,19 +78,23 @@ class _LocationPickerState extends State<LocationPicker> {
                   userAgentPackageName: 'app.vennskapp',
                 ),
                 if (point != null)
-                  CircleLayer(circles: [
-                    CircleMarker(
-                      point: point,
-                      radius: 600,
-                      useRadiusInMeter: true,
-                      color: scheme.primary.withOpacity(0.2),
-                      borderColor: scheme.primary,
-                      borderStrokeWidth: 2,
-                    ),
-                  ]),
-                const RichAttributionWidget(attributions: [
-                  TextSourceAttribution('OpenStreetMap contributors'),
-                ]),
+                  CircleLayer(
+                    circles: [
+                      CircleMarker(
+                        point: point,
+                        radius: 600,
+                        useRadiusInMeter: true,
+                        color: scheme.primary.withValues(alpha: 0.2),
+                        borderColor: scheme.primary,
+                        borderStrokeWidth: 2,
+                      ),
+                    ],
+                  ),
+                const RichAttributionWidget(
+                  attributions: [
+                    TextSourceAttribution('OpenStreetMap contributors'),
+                  ],
+                ),
               ],
             ),
           ),
@@ -95,8 +103,10 @@ class _LocationPickerState extends State<LocationPicker> {
         Row(
           children: [
             Expanded(
-              child: Text(l10n.locationPrivacyNote,
-                  style: Theme.of(context).textTheme.bodySmall),
+              child: Text(
+                l10n.locationPrivacyNote,
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
             ),
             TextButton.icon(
               onPressed: _locating ? null : _useMyLocation,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:vennskapp/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -48,7 +48,9 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
         if (res.session == null && mounted) _showError(l10n.authCheckEmail);
       } else {
         await auth.signInWithPassword(
-            email: _email.text.trim(), password: _password.text);
+          email: _email.text.trim(),
+          password: _password.text,
+        );
       }
     } on AuthException catch (e) {
       _showError(l10n.authFailed(e.message));
@@ -79,16 +81,23 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Icon(Icons.auto_stories,
-                        size: 72, color: theme.colorScheme.primary),
+                    Icon(
+                      Icons.auto_stories,
+                      size: 72,
+                      color: theme.colorScheme.primary,
+                    ),
                     const SizedBox(height: 12),
-                    Text(l10n.appTitle,
-                        textAlign: TextAlign.center,
-                        style: theme.textTheme.headlineMedium),
+                    Text(
+                      l10n.appTitle,
+                      textAlign: TextAlign.center,
+                      style: theme.textTheme.headlineMedium,
+                    ),
                     const SizedBox(height: 8),
-                    Text(l10n.welcomeTagline,
-                        textAlign: TextAlign.center,
-                        style: theme.textTheme.bodyLarge),
+                    Text(
+                      l10n.welcomeTagline,
+                      textAlign: TextAlign.center,
+                      style: theme.textTheme.bodyLarge,
+                    ),
                     const SizedBox(height: 32),
                     TextFormField(
                       controller: _email,
@@ -106,7 +115,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                       autofillHints: [
                         _signUp
                             ? AutofillHints.newPassword
-                            : AutofillHints.password
+                            : AutofillHints.password,
                       ],
                       decoration: InputDecoration(labelText: l10n.authPassword),
                       validator: (v) => (v == null || v.length < 8)
@@ -130,7 +139,8 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                       child: _busy
                           ? const SizedBox.square(
                               dimension: 20,
-                              child: CircularProgressIndicator(strokeWidth: 2))
+                              child: CircularProgressIndicator(strokeWidth: 2),
+                            )
                           : Text(_signUp ? l10n.authSignUp : l10n.authSignIn),
                     ),
                     const SizedBox(height: 8),
@@ -139,7 +149,8 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                           ? null
                           : () => setState(() => _signUp = !_signUp),
                       child: Text(
-                          _signUp ? l10n.authHaveAccount : l10n.authNoAccount),
+                        _signUp ? l10n.authHaveAccount : l10n.authNoAccount,
+                      ),
                     ),
                   ],
                 ),

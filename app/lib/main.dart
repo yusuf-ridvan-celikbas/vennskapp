@@ -20,6 +20,8 @@ Future<void> main() async {
     );
   }
   await Supabase.initialize(
-      url: _supabaseUrl, publishableKey: _supabaseAnonKey);
+    url: _supabaseUrl,
+    publishableKey: _supabaseAnonKey,
+  );
   runApp(const ProviderScope(child: VennskApp()));
 }

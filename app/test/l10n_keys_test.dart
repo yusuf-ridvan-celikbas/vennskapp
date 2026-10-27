@@ -14,14 +14,21 @@ void main() {
     final dir = Directory('lib/l10n');
     final template = keysOf(File('lib/l10n/app_en.arb'));
     final others = dir.listSync().whereType<File>().where(
-        (f) => f.path.endsWith('.arb') && !f.path.endsWith('app_en.arb'));
+      (f) => f.path.endsWith('.arb') && !f.path.endsWith('app_en.arb'),
+    );
 
     for (final file in others) {
       final keys = keysOf(file);
-      expect(template.difference(keys), isEmpty,
-          reason: '${file.path} is missing keys');
-      expect(keys.difference(template), isEmpty,
-          reason: '${file.path} has unknown keys');
+      expect(
+        template.difference(keys),
+        isEmpty,
+        reason: '${file.path} is missing keys',
+      );
+      expect(
+        keys.difference(template),
+        isEmpty,
+        reason: '${file.path} has unknown keys',
+      );
     }
   });
 }

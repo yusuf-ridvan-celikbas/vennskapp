@@ -5,15 +5,20 @@ import 'package:vennskapp/app.dart';
 import 'package:vennskapp/core/auth_stage.dart';
 
 void main() {
-  Future<void> pumpAt(WidgetTester tester, Size size,
-      {AuthStage stage = AuthStage.ready}) async {
+  Future<void> pumpAt(
+    WidgetTester tester,
+    Size size, {
+    AuthStage stage = AuthStage.ready,
+  }) async {
     tester.view.physicalSize = size;
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
-    await tester.pumpWidget(ProviderScope(
-      overrides: [authStageProvider.overrideWithValue(stage)],
-      child: const VennskApp(),
-    ));
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [authStageProvider.overrideWithValue(stage)],
+        child: const VennskApp(),
+      ),
+    );
     await tester.pumpAndSettle();
   }
 

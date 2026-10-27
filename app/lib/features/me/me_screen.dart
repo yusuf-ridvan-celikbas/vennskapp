@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:vennskapp/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/supabase.dart';
@@ -13,7 +13,7 @@ class MeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final theme = Theme.of(context);
-    final profile = ref.watch(myProfileProvider).valueOrNull;
+    final profile = ref.watch(myProfileProvider).value;
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.tabMe)),
@@ -25,10 +25,13 @@ class MeScreen extends ConsumerWidget {
                 ListTile(
                   leading: CircleAvatar(
                     child: Text(
-                        profile.displayName!.characters.first.toUpperCase()),
+                      profile.displayName!.characters.first.toUpperCase(),
+                    ),
                   ),
-                  title: Text(profile.displayName!,
-                      style: theme.textTheme.titleLarge),
+                  title: Text(
+                    profile.displayName!,
+                    style: theme.textTheme.titleLarge,
+                  ),
                   subtitle: Text('@${profile.username}'),
                 ),
                 ListTile(

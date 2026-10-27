@@ -35,28 +35,35 @@ final routerProvider = Provider<GoRouter>((ref) {
     routes: [
       GoRoute(
         path: '/loading',
-        builder: (_, __) =>
+        builder: (_, _) =>
             const Scaffold(body: Center(child: CircularProgressIndicator())),
       ),
-      GoRoute(path: '/welcome', builder: (_, __) => const AuthScreen()),
-      GoRoute(
-          path: '/onboarding', builder: (_, __) => const OnboardingScreen()),
+      GoRoute(path: '/welcome', builder: (_, _) => const AuthScreen()),
+      GoRoute(path: '/onboarding', builder: (_, _) => const OnboardingScreen()),
       StatefulShellRoute.indexedStack(
         builder: (context, state, shell) => HomeShell(shell: shell),
         branches: [
-          StatefulShellBranch(routes: [
-            GoRoute(path: '/shelf', builder: (_, __) => const ShelfScreen()),
-          ]),
-          StatefulShellBranch(routes: [
-            GoRoute(
-                path: '/discover', builder: (_, __) => const DiscoverScreen()),
-          ]),
-          StatefulShellBranch(routes: [
-            GoRoute(path: '/loans', builder: (_, __) => const LoansScreen()),
-          ]),
-          StatefulShellBranch(routes: [
-            GoRoute(path: '/me', builder: (_, __) => const MeScreen()),
-          ]),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(path: '/shelf', builder: (_, _) => const ShelfScreen()),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: '/discover',
+                builder: (_, _) => const DiscoverScreen(),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(path: '/loans', builder: (_, _) => const LoansScreen()),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [GoRoute(path: '/me', builder: (_, _) => const MeScreen())],
+          ),
         ],
       ),
     ],

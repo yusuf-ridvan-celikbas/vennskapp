@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:vennskapp/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 
 /// Bottom tabs on phones, a navigation rail from 600 dp up.
@@ -23,23 +23,25 @@ class HomeShell extends StatelessWidget {
 
     if (MediaQuery.sizeOf(context).width >= 600) {
       return Scaffold(
-        body: Row(children: [
-          NavigationRail(
-            selectedIndex: shell.currentIndex,
-            onDestinationSelected: _select,
-            labelType: NavigationRailLabelType.all,
-            destinations: [
-              for (final (icon, selected, label) in destinations)
-                NavigationRailDestination(
-                  icon: Icon(icon),
-                  selectedIcon: Icon(selected),
-                  label: Text(label),
-                ),
-            ],
-          ),
-          const VerticalDivider(width: 1),
-          Expanded(child: shell),
-        ]),
+        body: Row(
+          children: [
+            NavigationRail(
+              selectedIndex: shell.currentIndex,
+              onDestinationSelected: _select,
+              labelType: NavigationRailLabelType.all,
+              destinations: [
+                for (final (icon, selected, label) in destinations)
+                  NavigationRailDestination(
+                    icon: Icon(icon),
+                    selectedIcon: Icon(selected),
+                    label: Text(label),
+                  ),
+              ],
+            ),
+            const VerticalDivider(width: 1),
+            Expanded(child: shell),
+          ],
+        ),
       );
     }
     return Scaffold(

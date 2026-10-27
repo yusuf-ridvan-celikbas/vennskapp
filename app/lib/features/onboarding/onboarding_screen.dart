@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:vennskapp/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -48,7 +48,9 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     }
     setState(() => _busy = true);
     try {
-      await ref.read(profileRepositoryProvider).completeOnboarding(
+      await ref
+          .read(profileRepositoryProvider)
+          .completeOnboarding(
             userId: ref.read(currentUserIdProvider)!,
             username: _username.text.trim().toLowerCase(),
             displayName: _displayName.text.trim(),
@@ -63,8 +65,9 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
         setState(() => _usernameTaken = l10n.onboardingUsernameTaken);
         _form.currentState!.validate();
       } else if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(l10n.genericError(e.message))));
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(l10n.genericError(e.message))));
       }
     } finally {
       if (mounted) setState(() => _busy = false);
@@ -99,8 +102,9 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                   const SizedBox(height: 24),
                   TextFormField(
                     controller: _displayName,
-                    decoration:
-                        InputDecoration(labelText: l10n.onboardingDisplayName),
+                    decoration: InputDecoration(
+                      labelText: l10n.onboardingDisplayName,
+                    ),
                     textCapitalization: TextCapitalization.words,
                     maxLength: 50,
                     validator: (v) => (v == null || v.trim().isEmpty)
@@ -125,8 +129,10 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                     },
                   ),
                   const SizedBox(height: 16),
-                  Text(l10n.onboardingWhereTitle,
-                      style: theme.textTheme.titleMedium),
+                  Text(
+                    l10n.onboardingWhereTitle,
+                    style: theme.textTheme.titleMedium,
+                  ),
                   const SizedBox(height: 8),
                   LocationPicker(
                     value: _home,
@@ -146,18 +152,26 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                         : null,
                   ),
                   const SizedBox(height: 16),
-                  Text(l10n.onboardingVisibilityTitle,
-                      style: theme.textTheme.titleMedium),
-                  for (final level in VisibilityLevel.values)
-                    RadioListTile<VisibilityLevel>(
-                      value: level,
-                      groupValue: _visibility,
-                      onChanged: (v) => setState(() => _visibility = v!),
-                      secondary: Icon(level.icon),
-                      title: Text(level.label(l10n)),
-                      subtitle: Text(level.explanation(l10n)),
-                      contentPadding: EdgeInsets.zero,
+                  Text(
+                    l10n.onboardingVisibilityTitle,
+                    style: theme.textTheme.titleMedium,
+                  ),
+                  RadioGroup<VisibilityLevel>(
+                    groupValue: _visibility,
+                    onChanged: (v) => setState(() => _visibility = v!),
+                    child: Column(
+                      children: [
+                        for (final level in VisibilityLevel.values)
+                          RadioListTile<VisibilityLevel>(
+                            value: level,
+                            secondary: Icon(level.icon),
+                            title: Text(level.label(l10n)),
+                            subtitle: Text(level.explanation(l10n)),
+                            contentPadding: EdgeInsets.zero,
+                          ),
+                      ],
                     ),
+                  ),
                   const SizedBox(height: 24),
                   FilledButton(
                     onPressed: _busy ? null : _submit,
