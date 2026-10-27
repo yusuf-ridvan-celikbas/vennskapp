@@ -1182,4 +1182,85 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get feedbackGiven => 'Thanks, your feedback was saved.';
+
+  @override
+  String get settingsTitle => 'Settings';
+
+  @override
+  String get settingsLanguage => 'Language';
+
+  @override
+  String get languageEnglish => 'English';
+
+  @override
+  String get languageTurkish => 'Türkçe';
+
+  @override
+  String get privacyTitle => 'Privacy';
+
+  @override
+  String get privacySubtitle => 'What we store and why';
+
+  @override
+  String get authPrivacyLink => 'How we handle your data';
+
+  @override
+  String get privacyDemoNote =>
+      'VennskApp is a demo run by a private person for friends and neighbors. It is not a company service yet.';
+
+  @override
+  String get privacyDataTitle => 'What we store';
+
+  @override
+  String get privacyDataBody =>
+      'Your email, name, username, an approximate area (about 1 km), your shelf, loans, friends, the reports you send and your reading log. We never store your address, phone number or exact location.';
+
+  @override
+  String get privacyWhoTitle => 'Who sees what';
+
+  @override
+  String get privacyWhoBody =>
+      'You choose who sees your books and profile. Your reading log is only for you: lenders see just a suggested number of days. Others see your area name and a rounded distance, never your location.';
+
+  @override
+  String get privacyWhyTitle => 'Why';
+
+  @override
+  String get privacyWhyBody =>
+      'Only to run the app: showing your books to the people you choose, arranging loans and sending reminders. No ads, no selling data, no tracking.';
+
+  @override
+  String get privacyWhereTitle => 'Where it is kept';
+
+  @override
+  String get privacyWhereBody =>
+      'In a Supabase database. Book details come from Open Library and Google Books, so your search words are sent to them. The map uses OpenStreetMap.';
+
+  @override
+  String get privacyRightsTitle => 'Your rights';
+
+  @override
+  String get privacyRightsBody =>
+      'Under GDPR and KVKK you can see, correct and delete your data. You can delete your account at any time on the Me tab, and everything about you is removed right away. For a copy of your data, ask the person who invited you.';
+
+  @override
+  String get deleteAccount => 'Delete account';
+
+  @override
+  String get deleteAccountTitle => 'Delete your account?';
+
+  @override
+  String get deleteAccountBody =>
+      'This permanently removes your profile, shelf, reading log, friends, notifications and loan history. It can\'t be undone.';
+
+  @override
+  String get deleteAccountConfirm => 'Delete forever';
+
+  @override
+  String get deleteAccountOpenLoans =>
+      'Please finish your open loans first: books you have lent or borrowed need to be returned.';
+
+  @override
+  String get deleteAccountDone =>
+      'Your account was deleted. Take care, neighbor!';
 }

@@ -6,6 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
 import 'app_localizations_en.dart';
+import 'app_localizations_tr.dart';
 
 // ignore_for_file: type=lint
 
@@ -92,7 +93,10 @@ abstract class AppLocalizations {
       ];
 
   /// A list of this localizations delegate's supported locales.
-  static const List<Locale> supportedLocales = <Locale>[Locale('en')];
+  static const List<Locale> supportedLocales = <Locale>[
+    Locale('en'),
+    Locale('tr'),
+  ];
 
   /// App name; not translated.
   ///
@@ -1881,6 +1885,150 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Thanks, your feedback was saved.'**
   String get feedbackGiven;
+
+  /// No description provided for @settingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settingsTitle;
+
+  /// No description provided for @settingsLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get settingsLanguage;
+
+  /// No description provided for @languageEnglish.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get languageEnglish;
+
+  /// No description provided for @languageTurkish.
+  ///
+  /// In en, this message translates to:
+  /// **'Türkçe'**
+  String get languageTurkish;
+
+  /// No description provided for @privacyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy'**
+  String get privacyTitle;
+
+  /// No description provided for @privacySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What we store and why'**
+  String get privacySubtitle;
+
+  /// No description provided for @authPrivacyLink.
+  ///
+  /// In en, this message translates to:
+  /// **'How we handle your data'**
+  String get authPrivacyLink;
+
+  /// No description provided for @privacyDemoNote.
+  ///
+  /// In en, this message translates to:
+  /// **'VennskApp is a demo run by a private person for friends and neighbors. It is not a company service yet.'**
+  String get privacyDemoNote;
+
+  /// No description provided for @privacyDataTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What we store'**
+  String get privacyDataTitle;
+
+  /// No description provided for @privacyDataBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your email, name, username, an approximate area (about 1 km), your shelf, loans, friends, the reports you send and your reading log. We never store your address, phone number or exact location.'**
+  String get privacyDataBody;
+
+  /// No description provided for @privacyWhoTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Who sees what'**
+  String get privacyWhoTitle;
+
+  /// No description provided for @privacyWhoBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You choose who sees your books and profile. Your reading log is only for you: lenders see just a suggested number of days. Others see your area name and a rounded distance, never your location.'**
+  String get privacyWhoBody;
+
+  /// No description provided for @privacyWhyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Why'**
+  String get privacyWhyTitle;
+
+  /// No description provided for @privacyWhyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Only to run the app: showing your books to the people you choose, arranging loans and sending reminders. No ads, no selling data, no tracking.'**
+  String get privacyWhyBody;
+
+  /// No description provided for @privacyWhereTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Where it is kept'**
+  String get privacyWhereTitle;
+
+  /// No description provided for @privacyWhereBody.
+  ///
+  /// In en, this message translates to:
+  /// **'In a Supabase database. Book details come from Open Library and Google Books, so your search words are sent to them. The map uses OpenStreetMap.'**
+  String get privacyWhereBody;
+
+  /// No description provided for @privacyRightsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your rights'**
+  String get privacyRightsTitle;
+
+  /// No description provided for @privacyRightsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Under GDPR and KVKK you can see, correct and delete your data. You can delete your account at any time on the Me tab, and everything about you is removed right away. For a copy of your data, ask the person who invited you.'**
+  String get privacyRightsBody;
+
+  /// No description provided for @deleteAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete account'**
+  String get deleteAccount;
+
+  /// No description provided for @deleteAccountTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete your account?'**
+  String get deleteAccountTitle;
+
+  /// No description provided for @deleteAccountBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This permanently removes your profile, shelf, reading log, friends, notifications and loan history. It can\'t be undone.'**
+  String get deleteAccountBody;
+
+  /// No description provided for @deleteAccountConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete forever'**
+  String get deleteAccountConfirm;
+
+  /// No description provided for @deleteAccountOpenLoans.
+  ///
+  /// In en, this message translates to:
+  /// **'Please finish your open loans first: books you have lent or borrowed need to be returned.'**
+  String get deleteAccountOpenLoans;
+
+  /// No description provided for @deleteAccountDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Your account was deleted. Take care, neighbor!'**
+  String get deleteAccountDone;
 }
 
 class _AppLocalizationsDelegate
@@ -1894,7 +2042,7 @@ class _AppLocalizationsDelegate
 
   @override
   bool isSupported(Locale locale) =>
-      <String>['en'].contains(locale.languageCode);
+      <String>['en', 'tr'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
@@ -1905,6 +2053,8 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
   switch (locale.languageCode) {
     case 'en':
       return AppLocalizationsEn();
+    case 'tr':
+      return AppLocalizationsTr();
   }
 
   throw FlutterError(

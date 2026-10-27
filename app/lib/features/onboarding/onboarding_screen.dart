@@ -58,6 +58,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
             lat: _home!.latitude,
             lon: _home!.longitude,
             areaName: _area.text.trim(),
+            locale: Localizations.localeOf(context).languageCode,
           );
       ref.invalidate(myProfileProvider);
     } on PostgrestException catch (e) {

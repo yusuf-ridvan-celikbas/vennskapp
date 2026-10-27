@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vennskapp/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../core/supabase.dart';
@@ -151,6 +152,11 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                       child: Text(
                         _signUp ? l10n.authHaveAccount : l10n.authNoAccount,
                       ),
+                    ),
+                    TextButton.icon(
+                      onPressed: () => context.push('/privacy'),
+                      icon: const Icon(Icons.privacy_tip_outlined, size: 18),
+                      label: Text(l10n.authPrivacyLink),
                     ),
                   ],
                 ),

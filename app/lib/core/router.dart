@@ -13,6 +13,7 @@ import '../features/library/shelf_screen.dart';
 import '../features/loans/loan_detail_screen.dart';
 import '../features/loans/loans_screen.dart';
 import '../features/me/me_screen.dart';
+import '../features/me/privacy_screen.dart';
 import '../features/notifications/notifications_screen.dart';
 import '../features/onboarding/onboarding_screen.dart';
 import '../features/reading/reading_screen.dart';
@@ -34,6 +35,8 @@ final routerProvider = Provider<GoRouter>((ref) {
     refreshListenable: stage,
     redirect: (context, state) {
       final here = state.matchedLocation;
+      // Readable whether or not you are signed in.
+      if (here == '/privacy') return null;
       final target = switch (stage.value) {
         AuthStage.loading => '/loading',
         AuthStage.signedOut => '/welcome',
@@ -62,6 +65,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(path: '/welcome', builder: (_, _) => const AuthScreen()),
       GoRoute(path: '/onboarding', builder: (_, _) => const OnboardingScreen()),
+      GoRoute(path: '/privacy', builder: (_, _) => const PrivacyScreen()),
       GoRoute(
         path: '/notifications',
         builder: (_, _) => const NotificationsScreen(),

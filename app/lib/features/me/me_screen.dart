@@ -3,7 +3,6 @@ import 'package:vennskapp/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../core/supabase.dart';
 import '../notifications/notifications_screen.dart';
 import '../profile/profile_repository.dart';
 import '../profile/visibility_labels.dart';
@@ -11,6 +10,7 @@ import '../reading/log_session_sheet.dart';
 import '../reading/reading_screen.dart';
 import '../social/person.dart';
 import '../social/social_repository.dart';
+import 'settings_section.dart';
 
 class MeScreen extends ConsumerWidget {
   const MeScreen({super.key});
@@ -97,11 +97,7 @@ class MeScreen extends ConsumerWidget {
                   onTap: () => context.push('/me/friends'),
                 ),
                 const Divider(),
-                ListTile(
-                  leading: const Icon(Icons.logout),
-                  title: Text(l10n.signOut),
-                  onTap: () => ref.read(supabaseProvider).auth.signOut(),
-                ),
+                SettingsSection(profile: profile),
               ],
             ),
     );

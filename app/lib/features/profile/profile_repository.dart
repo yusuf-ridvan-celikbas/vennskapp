@@ -26,6 +26,7 @@ class ProfileRepository {
     required double lat,
     required double lon,
     required String areaName,
+    required String locale,
   }) async {
     await _db
         .from('profiles')
@@ -33,6 +34,7 @@ class ProfileRepository {
           'username': username,
           'display_name': displayName,
           'default_visibility': defaultVisibility.name,
+          'locale': locale,
         })
         .eq('id', userId);
     await _db.rpc(
@@ -40,6 +42,12 @@ class ProfileRepository {
       params: {'lat': lat, 'lon': lon, 'area': areaName},
     );
   }
+
+  Future<void> setLocale(String userId, String locale) =>
+      _db.from('profiles').update({'locale': locale}).eq('id', userId);
+
+  /// Fails with SQLSTATE 55000 while a loan is promised or active.
+  Future<void> deleteMyAccount() => _db.rpc('delete_my_account');
 }
 
 final profileRepositoryProvider = Provider(
