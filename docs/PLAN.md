@@ -377,4 +377,7 @@ Total ≈ 12–18 part-time weeks. Each milestone ends with something you can sh
 - 2026-10-27: Loans that are accepted but not handed over within **7 days** are cancelled automatically (hourly `pg_cron` job `expire-stale-loans`).
 - 2026-10-27: Loan partners can see each other's basic profile while a loan is open and for **30 days** after it ends.
 - 2026-10-27: Google Books fallback needs a free API key (`GOOGLE_BOOKS_API_KEY`); the anonymous quota is unusable.
+- 2026-10-27: Loan reminders run daily at **07:00 UTC** (`loan-reminders`). "Due soon" (within 2 days) goes to the borrower; "overdue" goes to both people, once per due date (an extension earns a fresh reminder).
+- 2026-10-27: Only the thumbs-up count is shown on profiles; thumbs-down is stored for review but never displayed.
+- 2026-10-27: Reports can't be read through the API at all; review them in Supabase Studio (`public.reports`). A repeated report for the same person and reason updates the open one.
 - Known follow-up: limit how often a user can move their home area, so distance labels can't be used to narrow down someone's grid cell.

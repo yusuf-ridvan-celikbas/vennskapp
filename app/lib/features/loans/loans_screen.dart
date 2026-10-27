@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:vennskapp/l10n/app_localizations.dart';
 
 import '../books/book_cover.dart';
+import '../notifications/notifications_screen.dart';
 import '../shell/empty_state.dart';
 import 'loan.dart';
 import 'loan_labels.dart';
@@ -48,6 +49,7 @@ class LoansScreen extends ConsumerWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text(l10n.tabLoans),
+          actions: const [NotificationBell()],
           bottom: TabBar(
             tabs: [
               tab(l10n.loansTabActive, active),

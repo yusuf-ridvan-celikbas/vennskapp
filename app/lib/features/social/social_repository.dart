@@ -56,6 +56,21 @@ class SocialRepository {
   Future<void> unblock(String userId) =>
       _db.rpc('unblock_user', params: {'target': userId});
 
+  Future<void> report(
+    String userId, {
+    required String reason,
+    String? details,
+    String? loanId,
+  }) => _db.rpc(
+    'report_user',
+    params: {
+      'target': userId,
+      'reason': reason,
+      'details': details,
+      'loan': loanId,
+    },
+  );
+
   /// The books of [userId] that the viewer may see (RLS filters the rest).
   Future<List<LibraryItem>> shelfOf(String userId) async {
     final rows = await _db

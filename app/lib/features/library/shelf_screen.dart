@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:vennskapp/l10n/app_localizations.dart';
 
 import '../books/book_cover.dart';
+import '../notifications/notifications_screen.dart';
 import '../shell/empty_state.dart';
 import 'library_item.dart';
 import 'library_repository.dart';
@@ -67,7 +68,10 @@ class _ShelfScreenState extends ConsumerState<ShelfScreen> {
     final shelf = ref.watch(myShelfProvider);
 
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.tabShelf)),
+      appBar: AppBar(
+        title: Text(l10n.tabShelf),
+        actions: const [NotificationBell()],
+      ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _showAddOptions,
         icon: const Icon(Icons.add),

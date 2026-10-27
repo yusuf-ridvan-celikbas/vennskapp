@@ -13,6 +13,7 @@ import '../features/library/shelf_screen.dart';
 import '../features/loans/loan_detail_screen.dart';
 import '../features/loans/loans_screen.dart';
 import '../features/me/me_screen.dart';
+import '../features/notifications/notifications_screen.dart';
 import '../features/onboarding/onboarding_screen.dart';
 import '../features/reading/reading_screen.dart';
 import '../features/shell/home_shell.dart';
@@ -61,6 +62,10 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(path: '/welcome', builder: (_, _) => const AuthScreen()),
       GoRoute(path: '/onboarding', builder: (_, _) => const OnboardingScreen()),
+      GoRoute(
+        path: '/notifications',
+        builder: (_, _) => const NotificationsScreen(),
+      ),
       GoRoute(
         path: '/people/:id',
         builder: (_, state) =>

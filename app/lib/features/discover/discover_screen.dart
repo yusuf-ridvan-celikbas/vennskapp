@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:vennskapp/l10n/app_localizations.dart';
 
 import '../books/book_cover.dart';
+import '../notifications/notifications_screen.dart';
 import '../shell/empty_state.dart';
 import 'discover_repository.dart';
 
@@ -44,7 +45,10 @@ class _DiscoverScreenState extends ConsumerState<DiscoverScreen> {
     final results = ref.watch(discoverBooksProvider(_query));
 
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.tabDiscover)),
+      appBar: AppBar(
+        title: Text(l10n.tabDiscover),
+        actions: const [NotificationBell()],
+      ),
       body: Column(
         children: [
           Padding(

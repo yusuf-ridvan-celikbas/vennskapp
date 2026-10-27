@@ -637,5 +637,234 @@
       }
     }
   },
-  "statConfidence": "How well we know your pace"
+  "statConfidence": "How well we know your pace",
+  "notificationsTitle": "Notifications",
+  "notificationsMarkAllRead": "Mark all read",
+  "notificationsEmptyTitle": "All quiet",
+  "notificationsEmptyBody": "Loan requests, handovers, reminders and friend requests will show up here.",
+  "notificationsUnread": "Unread",
+  "notificationsView": "View",
+  "notifLoanRequested": "{name} would like to borrow {title}",
+  "@notifLoanRequested": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "notifLoanAccepted": "{name} will lend you {title} for {days} days. Arrange the handover!",
+  "@notifLoanAccepted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      },
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "notifLoanLentElsewhere": "{title} went to another neighbor this time",
+  "@notifLoanLentElsewhere": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "notifLoanDeclined": "{name} can't lend {title} this time",
+  "@notifLoanDeclined": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "notifLoanCancelled": "{name} called off the loan of {title}",
+  "@notifLoanCancelled": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "notifLoanHandover": "{name} confirmed the handover of {title}. Please confirm too.",
+  "@notifLoanHandover": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "notifLoanStarted": "The loan of {title} has started",
+  "@notifLoanStarted": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "notifExtensionRequested": "{name} asks for {days} more days with {title}",
+  "@notifExtensionRequested": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      },
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "notifExtensionAccepted": "{name} gave you more time with {title}",
+  "@notifExtensionAccepted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "notifExtensionDeclined": "{name} couldn't give you more time with {title}",
+  "@notifExtensionDeclined": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "notifLoanReturned": "{name} has {title} back. How did it go?",
+  "@notifLoanReturned": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "notifLoanExpired": "The loan of {title} was cancelled: no handover within 7 days",
+  "@notifLoanExpired": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "notifLoanDueSoon": "{title} is due back to {name} on {date}",
+  "@notifLoanDueSoon": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "notifLoanOverdue": "{title} is overdue. Please bring it back to {name}.",
+  "@notifLoanOverdue": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notifLoanOverdueOwner": "{name} hasn't returned {title} yet",
+  "@notifLoanOverdueOwner": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "notifFriendRequest": "{name} sent you a friend request",
+  "@notifFriendRequest": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notifFriendAccepted": "{name} accepted your friend request",
+  "@notifFriendAccepted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notifGeneric": "You have a new notification",
+  "report": "Report",
+  "reportProblem": "Report a problem",
+  "reportTitle": "Report {name}",
+  "@reportTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "reportBody": "Reports are private: the other person won't see who sent it.",
+  "reportNotReturned": "The book was not returned",
+  "reportDamaged": "The book came back damaged",
+  "reportNoShow": "Didn't show up for the handover",
+  "reportInappropriate": "Rude or inappropriate behavior",
+  "reportSpam": "Spam or fake account",
+  "reportOther": "Something else",
+  "reportDetails": "What happened? (optional)",
+  "reportAlsoBlock": "Also block {name}",
+  "@reportAlsoBlock": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "reportSend": "Send report",
+  "reportSent": "Thank you. We'll look into it.",
+  "feedbackQuestion": "How did it go with {name}?",
+  "@feedbackQuestion": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackUp": "Went well",
+  "feedbackDown": "Not great",
+  "feedbackPrivate": "Only the total count of thumbs up is shown on profiles.",
+  "feedbackThanks": "Thanks for your feedback!",
+  "feedbackGiven": "Thanks, your feedback was saved."
 }

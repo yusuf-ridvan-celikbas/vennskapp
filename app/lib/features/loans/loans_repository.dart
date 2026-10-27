@@ -64,6 +64,9 @@ class LoansRepository {
   Future<void> confirmReturn(String loanId) =>
       _call<void>('confirm_return', {'loan': loanId});
 
+  Future<void> leaveFeedback(String loanId, {required bool up}) =>
+      _call<void>('leave_loan_feedback', {'loan': loanId, 'up': up});
+
   Future<T> _call<T>(String fn, Map<String, dynamic> params) async {
     try {
       return await _db.rpc(fn, params: params) as T;

@@ -32,6 +32,7 @@ class Loan {
     this.returnedAt,
     this.extensionDaysRequested,
     this.extensionStatus,
+    this.myFeedback,
   });
 
   final String id;
@@ -60,6 +61,7 @@ class Loan {
   final DateTime? returnedAt;
   final int? extensionDaysRequested;
   final String? extensionStatus; // pending | accepted | declined
+  final String? myFeedback; // up | down, after a returned loan
 
   bool get isOwner => role == LoanRole.owner;
   bool get isOpen => const {
@@ -121,6 +123,7 @@ class Loan {
     returnedAt: _date(json['returned_at']),
     extensionDaysRequested: json['extension_days_requested'] as int?,
     extensionStatus: json['extension_status'] as String?,
+    myFeedback: json['my_feedback'] as String?,
   );
 }
 

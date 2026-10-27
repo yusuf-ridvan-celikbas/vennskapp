@@ -1617,6 +1617,270 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'How well we know your pace'**
   String get statConfidence;
+
+  /// No description provided for @notificationsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notificationsTitle;
+
+  /// No description provided for @notificationsMarkAllRead.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark all read'**
+  String get notificationsMarkAllRead;
+
+  /// No description provided for @notificationsEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'All quiet'**
+  String get notificationsEmptyTitle;
+
+  /// No description provided for @notificationsEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Loan requests, handovers, reminders and friend requests will show up here.'**
+  String get notificationsEmptyBody;
+
+  /// No description provided for @notificationsUnread.
+  ///
+  /// In en, this message translates to:
+  /// **'Unread'**
+  String get notificationsUnread;
+
+  /// No description provided for @notificationsView.
+  ///
+  /// In en, this message translates to:
+  /// **'View'**
+  String get notificationsView;
+
+  /// No description provided for @notifLoanRequested.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} would like to borrow {title}'**
+  String notifLoanRequested(String name, String title);
+
+  /// No description provided for @notifLoanAccepted.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} will lend you {title} for {days} days. Arrange the handover!'**
+  String notifLoanAccepted(String name, String title, int days);
+
+  /// No description provided for @notifLoanLentElsewhere.
+  ///
+  /// In en, this message translates to:
+  /// **'{title} went to another neighbor this time'**
+  String notifLoanLentElsewhere(String title);
+
+  /// No description provided for @notifLoanDeclined.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} can\'t lend {title} this time'**
+  String notifLoanDeclined(String name, String title);
+
+  /// No description provided for @notifLoanCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} called off the loan of {title}'**
+  String notifLoanCancelled(String name, String title);
+
+  /// No description provided for @notifLoanHandover.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} confirmed the handover of {title}. Please confirm too.'**
+  String notifLoanHandover(String name, String title);
+
+  /// No description provided for @notifLoanStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'The loan of {title} has started'**
+  String notifLoanStarted(String title);
+
+  /// No description provided for @notifExtensionRequested.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} asks for {days} more days with {title}'**
+  String notifExtensionRequested(String name, String title, int days);
+
+  /// No description provided for @notifExtensionAccepted.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} gave you more time with {title}'**
+  String notifExtensionAccepted(String name, String title);
+
+  /// No description provided for @notifExtensionDeclined.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} couldn\'t give you more time with {title}'**
+  String notifExtensionDeclined(String name, String title);
+
+  /// No description provided for @notifLoanReturned.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} has {title} back. How did it go?'**
+  String notifLoanReturned(String name, String title);
+
+  /// No description provided for @notifLoanExpired.
+  ///
+  /// In en, this message translates to:
+  /// **'The loan of {title} was cancelled: no handover within 7 days'**
+  String notifLoanExpired(String title);
+
+  /// No description provided for @notifLoanDueSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'{title} is due back to {name} on {date}'**
+  String notifLoanDueSoon(String title, String name, String date);
+
+  /// No description provided for @notifLoanOverdue.
+  ///
+  /// In en, this message translates to:
+  /// **'{title} is overdue. Please bring it back to {name}.'**
+  String notifLoanOverdue(String title, String name);
+
+  /// No description provided for @notifLoanOverdueOwner.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} hasn\'t returned {title} yet'**
+  String notifLoanOverdueOwner(String name, String title);
+
+  /// No description provided for @notifFriendRequest.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} sent you a friend request'**
+  String notifFriendRequest(String name);
+
+  /// No description provided for @notifFriendAccepted.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} accepted your friend request'**
+  String notifFriendAccepted(String name);
+
+  /// No description provided for @notifGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'You have a new notification'**
+  String get notifGeneric;
+
+  /// No description provided for @report.
+  ///
+  /// In en, this message translates to:
+  /// **'Report'**
+  String get report;
+
+  /// No description provided for @reportProblem.
+  ///
+  /// In en, this message translates to:
+  /// **'Report a problem'**
+  String get reportProblem;
+
+  /// No description provided for @reportTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Report {name}'**
+  String reportTitle(String name);
+
+  /// No description provided for @reportBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Reports are private: the other person won\'t see who sent it.'**
+  String get reportBody;
+
+  /// No description provided for @reportNotReturned.
+  ///
+  /// In en, this message translates to:
+  /// **'The book was not returned'**
+  String get reportNotReturned;
+
+  /// No description provided for @reportDamaged.
+  ///
+  /// In en, this message translates to:
+  /// **'The book came back damaged'**
+  String get reportDamaged;
+
+  /// No description provided for @reportNoShow.
+  ///
+  /// In en, this message translates to:
+  /// **'Didn\'t show up for the handover'**
+  String get reportNoShow;
+
+  /// No description provided for @reportInappropriate.
+  ///
+  /// In en, this message translates to:
+  /// **'Rude or inappropriate behavior'**
+  String get reportInappropriate;
+
+  /// No description provided for @reportSpam.
+  ///
+  /// In en, this message translates to:
+  /// **'Spam or fake account'**
+  String get reportSpam;
+
+  /// No description provided for @reportOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Something else'**
+  String get reportOther;
+
+  /// No description provided for @reportDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'What happened? (optional)'**
+  String get reportDetails;
+
+  /// No description provided for @reportAlsoBlock.
+  ///
+  /// In en, this message translates to:
+  /// **'Also block {name}'**
+  String reportAlsoBlock(String name);
+
+  /// No description provided for @reportSend.
+  ///
+  /// In en, this message translates to:
+  /// **'Send report'**
+  String get reportSend;
+
+  /// No description provided for @reportSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Thank you. We\'ll look into it.'**
+  String get reportSent;
+
+  /// No description provided for @feedbackQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'How did it go with {name}?'**
+  String feedbackQuestion(String name);
+
+  /// No description provided for @feedbackUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Went well'**
+  String get feedbackUp;
+
+  /// No description provided for @feedbackDown.
+  ///
+  /// In en, this message translates to:
+  /// **'Not great'**
+  String get feedbackDown;
+
+  /// No description provided for @feedbackPrivate.
+  ///
+  /// In en, this message translates to:
+  /// **'Only the total count of thumbs up is shown on profiles.'**
+  String get feedbackPrivate;
+
+  /// No description provided for @feedbackThanks.
+  ///
+  /// In en, this message translates to:
+  /// **'Thanks for your feedback!'**
+  String get feedbackThanks;
+
+  /// No description provided for @feedbackGiven.
+  ///
+  /// In en, this message translates to:
+  /// **'Thanks, your feedback was saved.'**
+  String get feedbackGiven;
 }
 
 class _AppLocalizationsDelegate

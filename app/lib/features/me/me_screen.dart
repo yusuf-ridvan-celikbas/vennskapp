@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/supabase.dart';
+import '../notifications/notifications_screen.dart';
 import '../profile/profile_repository.dart';
 import '../profile/visibility_labels.dart';
 import '../reading/log_session_sheet.dart';
@@ -24,7 +25,10 @@ class MeScreen extends ConsumerWidget {
     final incoming = people.where((p) => p.kind == PeopleKind.incoming).length;
 
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.tabMe)),
+      appBar: AppBar(
+        title: Text(l10n.tabMe),
+        actions: const [NotificationBell()],
+      ),
       body: profile == null
           ? const Center(child: CircularProgressIndicator())
           : ListView(

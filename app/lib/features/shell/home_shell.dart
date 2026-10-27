@@ -4,6 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../loans/loans_repository.dart';
+import '../notifications/notification_text.dart';
+import '../notifications/notifications_repository.dart';
+import '../social/social_repository.dart';
 
 /// Bottom tabs on phones, a navigation rail from 600 dp up.
 class HomeShell extends ConsumerWidget {
@@ -18,6 +21,33 @@ class HomeShell extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final waiting = ref.watch(loansNeedingActionProvider);
+    ref.listen(notificationsProvider, (previous, next) {
+      final before = previous?.value;
+      final now = next.value;
+      if (before == null || now == null) return;
+      final known = {for (final n in before) n.id};
+      final fresh = now.where((n) => !known.contains(n.id)).toList();
+      if (fresh.isEmpty) return;
+      // Something happened elsewhere: reload what it may have changed.
+      ref.invalidate(myLoansProvider);
+      ref.invalidate(loanProvider);
+      ref.invalidate(loanEventsProvider);
+      ref.invalidate(myPeopleProvider);
+      ref.invalidate(personProvider);
+      final n = fresh.first;
+      final route = n.route;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(notificationText(context, n)),
+          action: route == null
+              ? null
+              : SnackBarAction(
+                  label: l10n.notificationsView,
+                  onPressed: () => context.push(route),
+                ),
+        ),
+      );
+    });
     Widget badged(IconData icon, int index) => Badge(
       isLabelVisible: index == 2 && waiting > 0,
       label: Text('$waiting'),

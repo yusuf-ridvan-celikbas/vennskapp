@@ -8,6 +8,7 @@ import 'package:vennskapp/l10n/app_localizations.dart';
 import '../../core/supabase.dart';
 import '../books/book_cover.dart';
 import '../discover/discover_repository.dart';
+import '../social/report_dialog.dart';
 import 'loan.dart';
 import 'loan_labels.dart';
 import 'loans_repository.dart';
@@ -23,7 +24,23 @@ class LoanDetailScreen extends ConsumerWidget {
     final l10n = AppLocalizations.of(context);
     final loan = ref.watch(loanProvider(loanId));
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: [
+          if (loan.value case final l?)
+            PopupMenuButton<String>(
+              onSelected: (_) => showReportDialog(
+                context,
+                ref,
+                personId: l.otherId,
+                name: l.otherName,
+                loanId: l.id,
+              ),
+              itemBuilder: (_) => [
+                PopupMenuItem(value: 'report', child: Text(l10n.reportProblem)),
+              ],
+            ),
+        ],
+      ),
       body: switch (loan) {
         AsyncData(:final value) when value == null => Center(
           child: Text(l10n.loanNotFound),
@@ -299,6 +316,62 @@ class _LoanBodyState extends ConsumerState<_LoanBody> {
     };
   }
 
+  Widget _feedbackCard(AppLocalizations l10n, ThemeData theme) {
+    final given = loan.myFeedback;
+    return Card(
+      margin: const EdgeInsets.only(top: 12),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: given != null
+            ? Row(
+                children: [
+                  Icon(given == 'up' ? Icons.thumb_up : Icons.thumb_down),
+                  const SizedBox(width: 12),
+                  Expanded(child: Text(l10n.feedbackGiven)),
+                ],
+              )
+            : Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    l10n.feedbackQuestion(loan.otherName),
+                    style: theme.textTheme.titleSmall,
+                  ),
+                  const SizedBox(height: 8),
+                  Wrap(
+                    spacing: 8,
+                    runSpacing: 8,
+                    children: [
+                      FilledButton.tonalIcon(
+                        onPressed: _busy
+                            ? null
+                            : () => _run(
+                                (r) => r.leaveFeedback(loan.id, up: true),
+                                done: l10n.feedbackThanks,
+                              ),
+                        icon: const Icon(Icons.thumb_up_outlined),
+                        label: Text(l10n.feedbackUp),
+                      ),
+                      OutlinedButton.icon(
+                        onPressed: _busy
+                            ? null
+                            : () => _run(
+                                (r) => r.leaveFeedback(loan.id, up: false),
+                                done: l10n.feedbackThanks,
+                              ),
+                        icon: const Icon(Icons.thumb_down_outlined),
+                        label: Text(l10n.feedbackDown),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Text(l10n.feedbackPrivate, style: theme.textTheme.bodySmall),
+                ],
+              ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
@@ -390,6 +463,7 @@ class _LoanBodyState extends ConsumerState<_LoanBody> {
             ],
             const SizedBox(height: 12),
             Wrap(spacing: 8, runSpacing: 8, children: _actions(l10n)),
+            if (loan.status == LoanStatus.returned) _feedbackCard(l10n, theme),
             const SizedBox(height: 24),
             Text(l10n.loanTimeline, style: theme.textTheme.titleSmall),
             for (final e in events)

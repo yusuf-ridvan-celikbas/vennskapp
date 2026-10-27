@@ -1007,4 +1007,179 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get statConfidence => 'How well we know your pace';
+
+  @override
+  String get notificationsTitle => 'Notifications';
+
+  @override
+  String get notificationsMarkAllRead => 'Mark all read';
+
+  @override
+  String get notificationsEmptyTitle => 'All quiet';
+
+  @override
+  String get notificationsEmptyBody =>
+      'Loan requests, handovers, reminders and friend requests will show up here.';
+
+  @override
+  String get notificationsUnread => 'Unread';
+
+  @override
+  String get notificationsView => 'View';
+
+  @override
+  String notifLoanRequested(String name, String title) {
+    return '$name would like to borrow $title';
+  }
+
+  @override
+  String notifLoanAccepted(String name, String title, int days) {
+    return '$name will lend you $title for $days days. Arrange the handover!';
+  }
+
+  @override
+  String notifLoanLentElsewhere(String title) {
+    return '$title went to another neighbor this time';
+  }
+
+  @override
+  String notifLoanDeclined(String name, String title) {
+    return '$name can\'t lend $title this time';
+  }
+
+  @override
+  String notifLoanCancelled(String name, String title) {
+    return '$name called off the loan of $title';
+  }
+
+  @override
+  String notifLoanHandover(String name, String title) {
+    return '$name confirmed the handover of $title. Please confirm too.';
+  }
+
+  @override
+  String notifLoanStarted(String title) {
+    return 'The loan of $title has started';
+  }
+
+  @override
+  String notifExtensionRequested(String name, String title, int days) {
+    return '$name asks for $days more days with $title';
+  }
+
+  @override
+  String notifExtensionAccepted(String name, String title) {
+    return '$name gave you more time with $title';
+  }
+
+  @override
+  String notifExtensionDeclined(String name, String title) {
+    return '$name couldn\'t give you more time with $title';
+  }
+
+  @override
+  String notifLoanReturned(String name, String title) {
+    return '$name has $title back. How did it go?';
+  }
+
+  @override
+  String notifLoanExpired(String title) {
+    return 'The loan of $title was cancelled: no handover within 7 days';
+  }
+
+  @override
+  String notifLoanDueSoon(String title, String name, String date) {
+    return '$title is due back to $name on $date';
+  }
+
+  @override
+  String notifLoanOverdue(String title, String name) {
+    return '$title is overdue. Please bring it back to $name.';
+  }
+
+  @override
+  String notifLoanOverdueOwner(String name, String title) {
+    return '$name hasn\'t returned $title yet';
+  }
+
+  @override
+  String notifFriendRequest(String name) {
+    return '$name sent you a friend request';
+  }
+
+  @override
+  String notifFriendAccepted(String name) {
+    return '$name accepted your friend request';
+  }
+
+  @override
+  String get notifGeneric => 'You have a new notification';
+
+  @override
+  String get report => 'Report';
+
+  @override
+  String get reportProblem => 'Report a problem';
+
+  @override
+  String reportTitle(String name) {
+    return 'Report $name';
+  }
+
+  @override
+  String get reportBody =>
+      'Reports are private: the other person won\'t see who sent it.';
+
+  @override
+  String get reportNotReturned => 'The book was not returned';
+
+  @override
+  String get reportDamaged => 'The book came back damaged';
+
+  @override
+  String get reportNoShow => 'Didn\'t show up for the handover';
+
+  @override
+  String get reportInappropriate => 'Rude or inappropriate behavior';
+
+  @override
+  String get reportSpam => 'Spam or fake account';
+
+  @override
+  String get reportOther => 'Something else';
+
+  @override
+  String get reportDetails => 'What happened? (optional)';
+
+  @override
+  String reportAlsoBlock(String name) {
+    return 'Also block $name';
+  }
+
+  @override
+  String get reportSend => 'Send report';
+
+  @override
+  String get reportSent => 'Thank you. We\'ll look into it.';
+
+  @override
+  String feedbackQuestion(String name) {
+    return 'How did it go with $name?';
+  }
+
+  @override
+  String get feedbackUp => 'Went well';
+
+  @override
+  String get feedbackDown => 'Not great';
+
+  @override
+  String get feedbackPrivate =>
+      'Only the total count of thumbs up is shown on profiles.';
+
+  @override
+  String get feedbackThanks => 'Thanks for your feedback!';
+
+  @override
+  String get feedbackGiven => 'Thanks, your feedback was saved.';
 }

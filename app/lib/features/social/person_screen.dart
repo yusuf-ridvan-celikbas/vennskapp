@@ -6,6 +6,7 @@ import 'package:vennskapp/l10n/app_localizations.dart';
 import '../books/book_cover.dart';
 import 'people_labels.dart';
 import 'person.dart';
+import 'report_dialog.dart';
 import 'social_repository.dart';
 
 /// Another person's profile and the part of their shelf the viewer may see.
@@ -78,6 +79,12 @@ class PersonScreen extends ConsumerWidget {
                   (r) => r.removeFriendship(p.id),
                 ),
                 'block' => _confirmBlock(context, ref, p),
+                'report' => showReportDialog(
+                  context,
+                  ref,
+                  personId: p.id,
+                  name: p.displayName,
+                ),
                 _ => _run(context, ref, (r) => r.unblock(p.id)),
               },
               itemBuilder: (_) => [
@@ -86,6 +93,7 @@ class PersonScreen extends ConsumerWidget {
                 p.blockedByMe
                     ? PopupMenuItem(value: 'unblock', child: Text(l10n.unblock))
                     : PopupMenuItem(value: 'block', child: Text(l10n.block)),
+                PopupMenuItem(value: 'report', child: Text(l10n.report)),
               ],
             ),
         ],
