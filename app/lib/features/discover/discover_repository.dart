@@ -3,6 +3,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../core/supabase.dart';
 import '../library/library_item.dart';
+import '../loans/loan.dart';
 import '../social/person.dart';
 
 /// A book that people the viewer can see own, with counts per group.
@@ -59,6 +60,9 @@ class Holder {
     this.approxKm,
     this.rating,
     this.review,
+    this.onLoan = false,
+    this.myLoanId,
+    this.myLoanStatus,
   });
 
   final String itemId;
@@ -72,6 +76,11 @@ class Holder {
   final int? approxKm;
   final int? rating;
   final String? review;
+  final bool onLoan;
+
+  /// My open request/loan for this copy, if any.
+  final String? myLoanId;
+  final LoanStatus? myLoanStatus;
 
   factory Holder.fromJson(Map<String, dynamic> json) => Holder(
     itemId: json['item_id'] as String,
@@ -85,6 +94,11 @@ class Holder {
     approxKm: json['approx_km'] as int?,
     rating: json['rating'] as int?,
     review: json['review'] as String?,
+    onLoan: json['on_loan'] as bool? ?? false,
+    myLoanId: json['my_loan_id'] as String?,
+    myLoanStatus: json['my_loan_status'] == null
+        ? null
+        : LoanStatus.values.byName(json['my_loan_status'] as String),
   );
 }
 

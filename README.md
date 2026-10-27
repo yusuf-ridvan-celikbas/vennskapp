@@ -2,7 +2,7 @@
 
 Your neighbors' bookshelves, one shared library. Lend and borrow books with friends and neighbors: no buying, no selling.
 
-Prototype status: **M3 (friends, visibility rules, discovery)**. See [docs/PLAN.md](docs/PLAN.md) for the full plan and milestones.
+Prototype status: **M4 (lending: request, handover, extension, return)**. See [docs/PLAN.md](docs/PLAN.md) for the full plan and milestones.
 
 ## Stack
 - `app/` is the Flutter app (Android + web first). It uses Riverpod, go_router and `gen-l10n` (ARB files in `app/lib/l10n`).

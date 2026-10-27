@@ -136,29 +136,11 @@ abstract class AppLocalizations {
   /// **'Add the books you own so your neighbors can discover them.'**
   String get shelfEmptyBody;
 
-  /// No description provided for @discoverEmptyTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Find a book nearby'**
-  String get discoverEmptyTitle;
-
-  /// No description provided for @discoverEmptyBody.
-  ///
-  /// In en, this message translates to:
-  /// **'Search for a title and see which friends and neighbors can lend it.'**
-  String get discoverEmptyBody;
-
   /// No description provided for @loansEmptyTitle.
   ///
   /// In en, this message translates to:
   /// **'No loans yet'**
   String get loansEmptyTitle;
-
-  /// No description provided for @loansEmptyBody.
-  ///
-  /// In en, this message translates to:
-  /// **'Books you borrow or lend will appear here.'**
-  String get loansEmptyBody;
 
   /// No description provided for @meTitle.
   ///
@@ -1011,6 +993,450 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You won\'t see each other\'s books or profiles, and they can\'t send you requests. They won\'t be told.'**
   String get blockBody;
+
+  /// No description provided for @view.
+  ///
+  /// In en, this message translates to:
+  /// **'View'**
+  String get view;
+
+  /// No description provided for @daysCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 day} other{{count} days}}'**
+  String daysCount(int count);
+
+  /// No description provided for @holderAskToBorrow.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask to borrow'**
+  String get holderAskToBorrow;
+
+  /// No description provided for @holderRequested.
+  ///
+  /// In en, this message translates to:
+  /// **'Requested'**
+  String get holderRequested;
+
+  /// No description provided for @holderPromised.
+  ///
+  /// In en, this message translates to:
+  /// **'Promised to you'**
+  String get holderPromised;
+
+  /// No description provided for @holderYouHaveIt.
+  ///
+  /// In en, this message translates to:
+  /// **'You have it'**
+  String get holderYouHaveIt;
+
+  /// No description provided for @holderLentOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Lent out'**
+  String get holderLentOut;
+
+  /// No description provided for @loanDefaultMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi neighbor! I\'d love to read this book.'**
+  String get loanDefaultMessage;
+
+  /// No description provided for @loanRequestTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Borrow “{title}”'**
+  String loanRequestTitle(String title);
+
+  /// No description provided for @loanRequestFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'from {name}'**
+  String loanRequestFrom(String name);
+
+  /// No description provided for @loanMessageLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'A few friendly words'**
+  String get loanMessageLabel;
+
+  /// No description provided for @loanRequestTip.
+  ///
+  /// In en, this message translates to:
+  /// **'After they say yes, you\'ll agree on where to meet. A café or library is a good public spot.'**
+  String get loanRequestTip;
+
+  /// No description provided for @loanRequestSend.
+  ///
+  /// In en, this message translates to:
+  /// **'Send request'**
+  String get loanRequestSend;
+
+  /// No description provided for @loanRequestSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Request sent to {name}'**
+  String loanRequestSent(String name);
+
+  /// No description provided for @loansTabActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get loansTabActive;
+
+  /// No description provided for @loansTabRequests.
+  ///
+  /// In en, this message translates to:
+  /// **'Requests'**
+  String get loansTabRequests;
+
+  /// No description provided for @loansTabHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get loansTabHistory;
+
+  /// No description provided for @loansEmptyActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Books you borrow or lend will appear here.'**
+  String get loansEmptyActive;
+
+  /// No description provided for @loansEmptyRequests.
+  ///
+  /// In en, this message translates to:
+  /// **'No open requests. Find a book in Discover and ask to borrow it!'**
+  String get loansEmptyRequests;
+
+  /// No description provided for @loansEmptyHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Finished loans will be kept here.'**
+  String get loansEmptyHistory;
+
+  /// No description provided for @loanYouLend.
+  ///
+  /// In en, this message translates to:
+  /// **'You lend'**
+  String get loanYouLend;
+
+  /// No description provided for @loanYouBorrow.
+  ///
+  /// In en, this message translates to:
+  /// **'You borrow'**
+  String get loanYouBorrow;
+
+  /// No description provided for @loanLentTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Lending to {name}'**
+  String loanLentTo(String name);
+
+  /// No description provided for @loanBorrowedFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'Borrowing from {name}'**
+  String loanBorrowedFrom(String name);
+
+  /// No description provided for @loanLineWantsToBorrow.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} would like to borrow it'**
+  String loanLineWantsToBorrow(String name);
+
+  /// No description provided for @loanLineWaitingAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for {name} to answer'**
+  String loanLineWaitingAnswer(String name);
+
+  /// No description provided for @loanLineArrangeHandover.
+  ///
+  /// In en, this message translates to:
+  /// **'Meet up and confirm the handover'**
+  String get loanLineArrangeHandover;
+
+  /// No description provided for @loanLineWaitingHandover.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for {name} to confirm the handover'**
+  String loanLineWaitingHandover(String name);
+
+  /// No description provided for @loanLineOverdue.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{Due today} =1{Overdue by 1 day} other{Overdue by {count} days}}'**
+  String loanLineOverdue(int count);
+
+  /// No description provided for @loanLineExtensionAsked.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} asks for {days} more days'**
+  String loanLineExtensionAsked(String name, int days);
+
+  /// No description provided for @loanLineReturned.
+  ///
+  /// In en, this message translates to:
+  /// **'Returned {date}'**
+  String loanLineReturned(String date);
+
+  /// No description provided for @loanLineDeclined.
+  ///
+  /// In en, this message translates to:
+  /// **'Not this time'**
+  String get loanLineDeclined;
+
+  /// No description provided for @loanLineCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled'**
+  String get loanLineCancelled;
+
+  /// No description provided for @loanNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'This loan isn\'t available.'**
+  String get loanNotFound;
+
+  /// No description provided for @loanChanged.
+  ///
+  /// In en, this message translates to:
+  /// **'This loan changed in the meantime. Here\'s the latest.'**
+  String get loanChanged;
+
+  /// No description provided for @loanDueOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Due back on {date}'**
+  String loanDueOn(String date);
+
+  /// No description provided for @loanHandoverTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Agree on a public place to meet, like a café or library. When the book changes hands, both of you tap confirm.'**
+  String get loanHandoverTip;
+
+  /// No description provided for @loanTheyConfirmed.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} has already confirmed.'**
+  String loanTheyConfirmed(String name);
+
+  /// No description provided for @loanMessageFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'Message from {name}'**
+  String loanMessageFrom(String name);
+
+  /// No description provided for @loanYourMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Your message'**
+  String get loanYourMessage;
+
+  /// No description provided for @loanTimeline.
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get loanTimeline;
+
+  /// No description provided for @loanAccept.
+  ///
+  /// In en, this message translates to:
+  /// **'Lend it'**
+  String get loanAccept;
+
+  /// No description provided for @loanDecline.
+  ///
+  /// In en, this message translates to:
+  /// **'Not this time'**
+  String get loanDecline;
+
+  /// No description provided for @loanAcceptTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How long can they keep it?'**
+  String get loanAcceptTitle;
+
+  /// No description provided for @loanAcceptHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a loan period for {name}. The time starts when you hand over the book.'**
+  String loanAcceptHelp(String name);
+
+  /// No description provided for @loanDaysLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Days'**
+  String get loanDaysLabel;
+
+  /// No description provided for @loanDaysRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Between {min} and {max} days'**
+  String loanDaysRange(int min, int max);
+
+  /// No description provided for @loanAcceptedSnack.
+  ///
+  /// In en, this message translates to:
+  /// **'Great! Now arrange the handover with {name}.'**
+  String loanAcceptedSnack(String name);
+
+  /// No description provided for @loanDeclineTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Say no kindly'**
+  String get loanDeclineTitle;
+
+  /// No description provided for @loanDeclineReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Reason (optional)'**
+  String get loanDeclineReason;
+
+  /// No description provided for @loanCancelRequest.
+  ///
+  /// In en, this message translates to:
+  /// **'Withdraw request'**
+  String get loanCancelRequest;
+
+  /// No description provided for @loanCallOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Call off'**
+  String get loanCallOff;
+
+  /// No description provided for @loanConfirmGave.
+  ///
+  /// In en, this message translates to:
+  /// **'I handed it over'**
+  String get loanConfirmGave;
+
+  /// No description provided for @loanConfirmGot.
+  ///
+  /// In en, this message translates to:
+  /// **'I received the book'**
+  String get loanConfirmGot;
+
+  /// No description provided for @loanMarkReturned.
+  ///
+  /// In en, this message translates to:
+  /// **'I got my book back'**
+  String get loanMarkReturned;
+
+  /// No description provided for @loanReturnedSnack.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome back, book!'**
+  String get loanReturnedSnack;
+
+  /// No description provided for @loanExtendAsk.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask for more time'**
+  String get loanExtendAsk;
+
+  /// No description provided for @loanExtendTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How many more days?'**
+  String get loanExtendTitle;
+
+  /// No description provided for @loanExtraDaysLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Extra days'**
+  String get loanExtraDaysLabel;
+
+  /// No description provided for @loanExtendSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Asked {name} for more time'**
+  String loanExtendSent(String name);
+
+  /// No description provided for @loanExtendAccept.
+  ///
+  /// In en, this message translates to:
+  /// **'Give {days} more days'**
+  String loanExtendAccept(int days);
+
+  /// No description provided for @loanExtendDecline.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep the due date'**
+  String get loanExtendDecline;
+
+  /// No description provided for @eventRequested.
+  ///
+  /// In en, this message translates to:
+  /// **'Request sent'**
+  String get eventRequested;
+
+  /// No description provided for @eventAccepted.
+  ///
+  /// In en, this message translates to:
+  /// **'Accepted for {days} days'**
+  String eventAccepted(int days);
+
+  /// No description provided for @eventDeclined.
+  ///
+  /// In en, this message translates to:
+  /// **'Declined'**
+  String get eventDeclined;
+
+  /// No description provided for @eventDeclinedOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Lent to someone else'**
+  String get eventDeclinedOther;
+
+  /// No description provided for @eventCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled'**
+  String get eventCancelled;
+
+  /// No description provided for @eventHandoverByMe.
+  ///
+  /// In en, this message translates to:
+  /// **'You confirmed the handover'**
+  String get eventHandoverByMe;
+
+  /// No description provided for @eventHandoverByThem.
+  ///
+  /// In en, this message translates to:
+  /// **'They confirmed the handover'**
+  String get eventHandoverByThem;
+
+  /// No description provided for @eventStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Loan started'**
+  String get eventStarted;
+
+  /// No description provided for @eventExtensionRequested.
+  ///
+  /// In en, this message translates to:
+  /// **'Asked for {days} more days'**
+  String eventExtensionRequested(int days);
+
+  /// No description provided for @eventExtensionAccepted.
+  ///
+  /// In en, this message translates to:
+  /// **'Extension accepted'**
+  String get eventExtensionAccepted;
+
+  /// No description provided for @eventExtensionDeclined.
+  ///
+  /// In en, this message translates to:
+  /// **'Extension declined'**
+  String get eventExtensionDeclined;
+
+  /// No description provided for @eventReturned.
+  ///
+  /// In en, this message translates to:
+  /// **'Book returned'**
+  String get eventReturned;
 }
 
 class _AppLocalizationsDelegate

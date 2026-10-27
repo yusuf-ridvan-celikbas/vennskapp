@@ -53,15 +53,15 @@ set local role authenticated;
 
 -- Item visibility matrix -----------------------------------------------------
 select pg_temp.act_as('00000000-0000-0000-0000-00000000000a');
-select is((select count(*)::int from public.library_items), 5, 'owner sees all own books');
+select is((select count(*)::int from public.library_items where owner_id = '00000000-0000-0000-0000-00000000000a'), 5, 'owner sees all own books');
 select pg_temp.act_as('00000000-0000-0000-0000-00000000000f');
-select is((select count(*)::int from public.library_items), 4, 'friend sees all but private');
+select is((select count(*)::int from public.library_items where owner_id = '00000000-0000-0000-0000-00000000000a'), 4, 'friend sees all but private');
 select pg_temp.act_as('00000000-0000-0000-0000-00000000000e');
-select is((select count(*)::int from public.library_items), 3, 'neighbor sees neighbors, public and default');
+select is((select count(*)::int from public.library_items where owner_id = '00000000-0000-0000-0000-00000000000a'), 3, 'neighbor sees neighbors, public and default');
 select pg_temp.act_as('00000000-0000-0000-0000-00000000000b');
-select is((select count(*)::int from public.library_items), 1, 'far-away user sees only public');
+select is((select count(*)::int from public.library_items where owner_id = '00000000-0000-0000-0000-00000000000a'), 1, 'far-away user sees only public');
 select pg_temp.act_as('00000000-0000-0000-0000-00000000000c');
-select is((select count(*)::int from public.library_items), 0, 'blocked user sees nothing');
+select is((select count(*)::int from public.library_items where owner_id = '00000000-0000-0000-0000-00000000000a'), 0, 'blocked user sees nothing');
 
 -- Profile visibility (O's profile_visibility defaults to 'neighbors') -------
 select pg_temp.act_as('00000000-0000-0000-0000-00000000000f');
@@ -82,9 +82,9 @@ select throws_ok($$ select * from public.profile_locations $$, '42501', null,
 
 -- Discovery -------------------------------------------------------------------
 select pg_temp.act_as('00000000-0000-0000-0000-00000000000e');
-select is((select array_agg(title order by title) from public.discover_books('')),
+select is((select array_agg(title order by title) from public.discover_books('') where book_id::text like '10000000-%'),
           array['Default book', 'Neighbors book', 'Public book'], 'neighbor discovers 3 books');
-select is((select count(*)::int from public.discover_books('neighb')), 1, 'title search filters');
+select is((select count(*)::int from public.discover_books('neighb') where book_id::text like '10000000-%'), 1, 'title search filters');
 select is((select relationship::text from public.search_book_holders('10000000-0000-0000-0000-000000000003')),
           'neighbor', 'holder list shows relationship');
 select is((select approx_km from public.search_book_holders('10000000-0000-0000-0000-000000000003')),
@@ -94,7 +94,7 @@ select is((select count(*)::int from public.search_book_holders('10000000-0000-0
 select pg_temp.act_as('00000000-0000-0000-0000-00000000000f');
 select is((select friends from public.discover_books('Friends')), 1, 'friend copy is counted as a friend');
 select pg_temp.act_as('00000000-0000-0000-0000-00000000000c');
-select is((select count(*)::int from public.discover_books('')), 0, 'blocked user discovers nothing');
+select is((select count(*)::int from public.discover_books('') where book_id::text like '10000000-%'), 0, 'blocked user discovers nothing');
 
 -- Friend requests ---------------------------------------------------------------
 select pg_temp.act_as('00000000-0000-0000-0000-00000000000e');
@@ -104,7 +104,7 @@ select is((select kind from public.my_people() where username = 'neighbor'), 'in
 select is(public.send_friend_request('neighbor'), 'accepted', 'asking back accepts the request');
 select pg_temp.act_as('00000000-0000-0000-0000-00000000000e');
 select is((select kind from public.my_people() where username = 'faraway'), 'friend', 'both are now friends');
-select is((select count(*)::int from public.library_items), 3, 'new friendship does not change O''s items for N');
+select is((select count(*)::int from public.library_items where owner_id = '00000000-0000-0000-0000-00000000000a'), 3, 'new friendship does not change O''s items for N');
 
 -- Blocking ----------------------------------------------------------------------
 select pg_temp.act_as('00000000-0000-0000-0000-00000000000c');

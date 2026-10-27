@@ -10,6 +10,7 @@ import '../features/library/manual_book_screen.dart';
 import '../features/library/scan_screen.dart';
 import '../features/library/search_book_screen.dart';
 import '../features/library/shelf_screen.dart';
+import '../features/loans/loan_detail_screen.dart';
 import '../features/loans/loans_screen.dart';
 import '../features/me/me_screen.dart';
 import '../features/onboarding/onboarding_screen.dart';
@@ -119,7 +120,18 @@ final routerProvider = Provider<GoRouter>((ref) {
           ),
           StatefulShellBranch(
             routes: [
-              GoRoute(path: '/loans', builder: (_, _) => const LoansScreen()),
+              GoRoute(
+                path: '/loans',
+                builder: (_, _) => const LoansScreen(),
+                routes: [
+                  GoRoute(
+                    path: ':id',
+                    parentNavigatorKey: _rootKey,
+                    builder: (_, state) =>
+                        LoanDetailScreen(loanId: state.pathParameters['id']!),
+                  ),
+                ],
+              ),
             ],
           ),
           StatefulShellBranch(

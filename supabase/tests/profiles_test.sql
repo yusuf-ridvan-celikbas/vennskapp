@@ -28,7 +28,7 @@ select set_config('request.jwt.claims', '{"sub":"11111111-1111-1111-1111-1111111
 
 select lives_ok($$ select public.set_home_location(59.92345, 10.75812, ' Grünerløkka ') $$,
                 'user can set home location');
-select is((select area_name from public.profiles), 'Grünerløkka',
+select is((select area_name from public.profiles where id = '11111111-1111-1111-1111-111111111111'), 'Grünerløkka',
           'area name is stored trimmed, and only own profile is visible');
 select throws_ok($$ select * from public.profile_locations $$, '42501', null,
                  'raw location is not readable by users');

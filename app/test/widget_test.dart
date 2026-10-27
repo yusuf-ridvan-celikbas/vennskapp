@@ -6,6 +6,7 @@ import 'package:vennskapp/core/auth_stage.dart';
 import 'package:vennskapp/core/router.dart';
 import 'package:vennskapp/features/discover/discover_repository.dart';
 import 'package:vennskapp/features/library/library_repository.dart';
+import 'package:vennskapp/features/loans/loans_repository.dart';
 
 void main() {
   Future<void> pumpAt(
@@ -22,6 +23,7 @@ void main() {
           authStageProvider.overrideWithValue(stage),
           myShelfProvider.overrideWith((ref) async => const []),
           discoverBooksProvider.overrideWith((ref, query) async => const []),
+          myLoansProvider.overrideWith((ref) async => const []),
         ],
         child: const VennskApp(),
       ),
@@ -84,6 +86,7 @@ void main() {
         }),
         myShelfProvider.overrideWith((ref) async => const []),
         discoverBooksProvider.overrideWith((ref, query) async => const []),
+        myLoansProvider.overrideWith((ref) async => const []),
       ],
     );
     addTearDown(container.dispose);

@@ -32,17 +32,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Add the books you own so your neighbors can discover them.';
 
   @override
-  String get discoverEmptyTitle => 'Find a book nearby';
-
-  @override
-  String get discoverEmptyBody =>
-      'Search for a title and see which friends and neighbors can lend it.';
-
-  @override
   String get loansEmptyTitle => 'No loans yet';
-
-  @override
-  String get loansEmptyBody => 'Books you borrow or lend will appear here.';
 
   @override
   String get meTitle => 'Your corner';
@@ -616,4 +606,287 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get blockBody =>
       'You won\'t see each other\'s books or profiles, and they can\'t send you requests. They won\'t be told.';
+
+  @override
+  String get view => 'View';
+
+  @override
+  String daysCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count days',
+      one: '1 day',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get holderAskToBorrow => 'Ask to borrow';
+
+  @override
+  String get holderRequested => 'Requested';
+
+  @override
+  String get holderPromised => 'Promised to you';
+
+  @override
+  String get holderYouHaveIt => 'You have it';
+
+  @override
+  String get holderLentOut => 'Lent out';
+
+  @override
+  String get loanDefaultMessage => 'Hi neighbor! I\'d love to read this book.';
+
+  @override
+  String loanRequestTitle(String title) {
+    return 'Borrow “$title”';
+  }
+
+  @override
+  String loanRequestFrom(String name) {
+    return 'from $name';
+  }
+
+  @override
+  String get loanMessageLabel => 'A few friendly words';
+
+  @override
+  String get loanRequestTip =>
+      'After they say yes, you\'ll agree on where to meet. A café or library is a good public spot.';
+
+  @override
+  String get loanRequestSend => 'Send request';
+
+  @override
+  String loanRequestSent(String name) {
+    return 'Request sent to $name';
+  }
+
+  @override
+  String get loansTabActive => 'Active';
+
+  @override
+  String get loansTabRequests => 'Requests';
+
+  @override
+  String get loansTabHistory => 'History';
+
+  @override
+  String get loansEmptyActive => 'Books you borrow or lend will appear here.';
+
+  @override
+  String get loansEmptyRequests =>
+      'No open requests. Find a book in Discover and ask to borrow it!';
+
+  @override
+  String get loansEmptyHistory => 'Finished loans will be kept here.';
+
+  @override
+  String get loanYouLend => 'You lend';
+
+  @override
+  String get loanYouBorrow => 'You borrow';
+
+  @override
+  String loanLentTo(String name) {
+    return 'Lending to $name';
+  }
+
+  @override
+  String loanBorrowedFrom(String name) {
+    return 'Borrowing from $name';
+  }
+
+  @override
+  String loanLineWantsToBorrow(String name) {
+    return '$name would like to borrow it';
+  }
+
+  @override
+  String loanLineWaitingAnswer(String name) {
+    return 'Waiting for $name to answer';
+  }
+
+  @override
+  String get loanLineArrangeHandover => 'Meet up and confirm the handover';
+
+  @override
+  String loanLineWaitingHandover(String name) {
+    return 'Waiting for $name to confirm the handover';
+  }
+
+  @override
+  String loanLineOverdue(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Overdue by $count days',
+      one: 'Overdue by 1 day',
+      zero: 'Due today',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String loanLineExtensionAsked(String name, int days) {
+    return '$name asks for $days more days';
+  }
+
+  @override
+  String loanLineReturned(String date) {
+    return 'Returned $date';
+  }
+
+  @override
+  String get loanLineDeclined => 'Not this time';
+
+  @override
+  String get loanLineCancelled => 'Cancelled';
+
+  @override
+  String get loanNotFound => 'This loan isn\'t available.';
+
+  @override
+  String get loanChanged =>
+      'This loan changed in the meantime. Here\'s the latest.';
+
+  @override
+  String loanDueOn(String date) {
+    return 'Due back on $date';
+  }
+
+  @override
+  String get loanHandoverTip =>
+      'Agree on a public place to meet, like a café or library. When the book changes hands, both of you tap confirm.';
+
+  @override
+  String loanTheyConfirmed(String name) {
+    return '$name has already confirmed.';
+  }
+
+  @override
+  String loanMessageFrom(String name) {
+    return 'Message from $name';
+  }
+
+  @override
+  String get loanYourMessage => 'Your message';
+
+  @override
+  String get loanTimeline => 'History';
+
+  @override
+  String get loanAccept => 'Lend it';
+
+  @override
+  String get loanDecline => 'Not this time';
+
+  @override
+  String get loanAcceptTitle => 'How long can they keep it?';
+
+  @override
+  String loanAcceptHelp(String name) {
+    return 'Choose a loan period for $name. The time starts when you hand over the book.';
+  }
+
+  @override
+  String get loanDaysLabel => 'Days';
+
+  @override
+  String loanDaysRange(int min, int max) {
+    return 'Between $min and $max days';
+  }
+
+  @override
+  String loanAcceptedSnack(String name) {
+    return 'Great! Now arrange the handover with $name.';
+  }
+
+  @override
+  String get loanDeclineTitle => 'Say no kindly';
+
+  @override
+  String get loanDeclineReason => 'Reason (optional)';
+
+  @override
+  String get loanCancelRequest => 'Withdraw request';
+
+  @override
+  String get loanCallOff => 'Call off';
+
+  @override
+  String get loanConfirmGave => 'I handed it over';
+
+  @override
+  String get loanConfirmGot => 'I received the book';
+
+  @override
+  String get loanMarkReturned => 'I got my book back';
+
+  @override
+  String get loanReturnedSnack => 'Welcome back, book!';
+
+  @override
+  String get loanExtendAsk => 'Ask for more time';
+
+  @override
+  String get loanExtendTitle => 'How many more days?';
+
+  @override
+  String get loanExtraDaysLabel => 'Extra days';
+
+  @override
+  String loanExtendSent(String name) {
+    return 'Asked $name for more time';
+  }
+
+  @override
+  String loanExtendAccept(int days) {
+    return 'Give $days more days';
+  }
+
+  @override
+  String get loanExtendDecline => 'Keep the due date';
+
+  @override
+  String get eventRequested => 'Request sent';
+
+  @override
+  String eventAccepted(int days) {
+    return 'Accepted for $days days';
+  }
+
+  @override
+  String get eventDeclined => 'Declined';
+
+  @override
+  String get eventDeclinedOther => 'Lent to someone else';
+
+  @override
+  String get eventCancelled => 'Cancelled';
+
+  @override
+  String get eventHandoverByMe => 'You confirmed the handover';
+
+  @override
+  String get eventHandoverByThem => 'They confirmed the handover';
+
+  @override
+  String get eventStarted => 'Loan started';
+
+  @override
+  String eventExtensionRequested(int days) {
+    return 'Asked for $days more days';
+  }
+
+  @override
+  String get eventExtensionAccepted => 'Extension accepted';
+
+  @override
+  String get eventExtensionDeclined => 'Extension declined';
+
+  @override
+  String get eventReturned => 'Book returned';
 }

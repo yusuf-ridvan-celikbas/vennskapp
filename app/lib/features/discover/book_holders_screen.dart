@@ -6,6 +6,8 @@ import 'package:vennskapp/l10n/app_localizations.dart';
 import '../../core/supabase.dart';
 import '../books/book.dart';
 import '../books/book_cover.dart';
+import '../loans/loan.dart';
+import '../loans/request_loan_sheet.dart';
 import '../social/people_labels.dart';
 import 'discover_repository.dart';
 
@@ -75,7 +77,7 @@ class BookHoldersScreen extends ConsumerWidget {
                       style: theme.textTheme.titleMedium,
                     ),
                     for (final h in value.where((h) => h.lendable))
-                      _HolderTile(holder: h),
+                      _HolderTile(holder: h, book: book),
                   ],
                   if (value.any((h) => !h.lendable)) ...[
                     const SizedBox(height: 16),
@@ -84,7 +86,7 @@ class BookHoldersScreen extends ConsumerWidget {
                       style: theme.textTheme.titleMedium,
                     ),
                     for (final h in value.where((h) => !h.lendable))
-                      _HolderTile(holder: h),
+                      _HolderTile(holder: h, book: book),
                   ],
                   if (value.isEmpty) Text(l10n.holdersNone),
                 ],
@@ -100,9 +102,34 @@ class BookHoldersScreen extends ConsumerWidget {
 }
 
 class _HolderTile extends StatelessWidget {
-  const _HolderTile({required this.holder});
+  const _HolderTile({required this.holder, required this.book});
 
   final Holder holder;
+  final Book? book;
+
+  Widget _availability(BuildContext context, AppLocalizations l10n) {
+    if (holder.myLoanId != null) {
+      return OutlinedButton(
+        onPressed: () => context.push('/loans/${holder.myLoanId}'),
+        child: Text(switch (holder.myLoanStatus) {
+          LoanStatus.requested => l10n.holderRequested,
+          LoanStatus.accepted => l10n.holderPromised,
+          _ => l10n.holderYouHaveIt,
+        }),
+      );
+    }
+    if (holder.onLoan) return Text(l10n.holderLentOut);
+    if (!holder.lendable || book == null) return Icon(holder.relationship.icon);
+    return FilledButton.tonal(
+      onPressed: () => showRequestLoanSheet(
+        context,
+        holder: holder,
+        bookId: book!.id,
+        bookTitle: book!.title,
+      ),
+      child: Text(l10n.holderAskToBorrow),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -138,7 +165,7 @@ class _HolderTile extends StatelessWidget {
             ),
         ],
       ),
-      trailing: Icon(holder.relationship.icon),
+      trailing: _availability(context, l10n),
       onTap: () => context.push('/people/${holder.ownerId}'),
     );
   }

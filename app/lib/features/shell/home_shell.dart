@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:vennskapp/l10n/app_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../loans/loans_repository.dart';
+
 /// Bottom tabs on phones, a navigation rail from 600 dp up.
-class HomeShell extends StatelessWidget {
+class HomeShell extends ConsumerWidget {
   const HomeShell({super.key, required this.shell});
 
   final StatefulNavigationShell shell;
@@ -12,8 +15,14 @@ class HomeShell extends StatelessWidget {
       shell.goBranch(index, initialLocation: index == shell.currentIndex);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
+    final waiting = ref.watch(loansNeedingActionProvider);
+    Widget badged(IconData icon, int index) => Badge(
+      isLabelVisible: index == 2 && waiting > 0,
+      label: Text('$waiting'),
+      child: Icon(icon),
+    );
     final destinations = [
       (Icons.auto_stories_outlined, Icons.auto_stories, l10n.tabShelf),
       (Icons.travel_explore_outlined, Icons.travel_explore, l10n.tabDiscover),
@@ -30,10 +39,10 @@ class HomeShell extends StatelessWidget {
               onDestinationSelected: _select,
               labelType: NavigationRailLabelType.all,
               destinations: [
-                for (final (icon, selected, label) in destinations)
+                for (final (i, (icon, selected, label)) in destinations.indexed)
                   NavigationRailDestination(
-                    icon: Icon(icon),
-                    selectedIcon: Icon(selected),
+                    icon: badged(icon, i),
+                    selectedIcon: badged(selected, i),
                     label: Text(label),
                   ),
               ],
@@ -50,10 +59,10 @@ class HomeShell extends StatelessWidget {
         selectedIndex: shell.currentIndex,
         onDestinationSelected: _select,
         destinations: [
-          for (final (icon, selected, label) in destinations)
+          for (final (i, (icon, selected, label)) in destinations.indexed)
             NavigationDestination(
-              icon: Icon(icon),
-              selectedIcon: Icon(selected),
+              icon: badged(icon, i),
+              selectedIcon: badged(selected, i),
               label: label,
             ),
         ],
