@@ -2,7 +2,7 @@
 
 Your neighbors' bookshelves, one shared library. Lend and borrow books with friends and neighbors: no buying, no selling.
 
-Prototype status: **M0 (setup)**. See [docs/PLAN.md](docs/PLAN.md) for the full plan and milestones.
+Prototype status: **M1 (sign-up, profile, home area)**. See [docs/PLAN.md](docs/PLAN.md) for the full plan and milestones.
 
 ## Stack
 - `app/` is the Flutter app (Android + web first). It uses Riverpod, go_router and `gen-l10n` (ARB files in `app/lib/l10n`).
@@ -41,3 +41,8 @@ flutter test
 
 ## Translations
 All UI text lives in `app/lib/l10n/app_<locale>.arb`, with English (`app_en.arb`) as the template. Never hard-code UI strings. `test/l10n_keys_test.dart` checks that every language file has the same keys.
+
+## Database
+- Migrations: `supabase/migrations/`. Apply them with `npx supabase@2 db reset`, which also wipes local data.
+- Tests: `npx supabase@2 test db` (pgTAP files in `supabase/tests/`).
+- Exact locations are never stored. `set_home_location` snaps the pin to a ~1 km grid cell and saves it in `profile_locations`, which no user can read directly.

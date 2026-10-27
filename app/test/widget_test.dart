@@ -2,13 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:vennskapp/app.dart';
+import 'package:vennskapp/core/auth_stage.dart';
 
 void main() {
-  Future<void> pumpAt(WidgetTester tester, Size size) async {
+  Future<void> pumpAt(WidgetTester tester, Size size,
+      {AuthStage stage = AuthStage.ready}) async {
     tester.view.physicalSize = size;
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
-    await tester.pumpWidget(const ProviderScope(child: VennskApp()));
+    await tester.pumpWidget(ProviderScope(
+      overrides: [authStageProvider.overrideWithValue(stage)],
+      child: const VennskApp(),
+    ));
     await tester.pumpAndSettle();
   }
 
@@ -28,5 +33,25 @@ void main() {
 
     expect(find.byType(NavigationRail), findsOneWidget);
     expect(find.byType(NavigationBar), findsNothing);
+  });
+
+  testWidgets('signed out: redirected to the welcome screen', (tester) async {
+    await pumpAt(tester, const Size(400, 800), stage: AuthStage.signedOut);
+
+    expect(find.text('Sign in'), findsOneWidget);
+    expect(find.byType(NavigationBar), findsNothing);
+  });
+
+  testWidgets('sign up requires the 18+ checkbox', (tester) async {
+    await pumpAt(tester, const Size(400, 800), stage: AuthStage.signedOut);
+
+    await tester.tap(find.text('New here? Create an account'));
+    await tester.pumpAndSettle();
+    await tester.enterText(find.byType(TextFormField).at(0), 'a@b.no');
+    await tester.enterText(find.byType(TextFormField).at(1), 'longenough');
+    await tester.tap(find.text('Create account'));
+    await tester.pump();
+
+    expect(find.text('VennskApp is for adults (18+) for now.'), findsOneWidget);
   });
 }

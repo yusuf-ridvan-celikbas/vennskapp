@@ -1,15 +1,25 @@
 {
   "@@locale": "en",
   "appTitle": "VennskApp",
-  "@appTitle": { "description": "App name; not translated." },
+  "@appTitle": {
+    "description": "App name; not translated."
+  },
   "tabShelf": "My shelf",
-  "@tabShelf": { "description": "Bottom tab: the user's own books." },
+  "@tabShelf": {
+    "description": "Bottom tab: the user's own books."
+  },
   "tabDiscover": "Discover",
-  "@tabDiscover": { "description": "Bottom tab: find books neighbors have." },
+  "@tabDiscover": {
+    "description": "Bottom tab: find books neighbors have."
+  },
   "tabLoans": "Loans",
-  "@tabLoans": { "description": "Bottom tab: books borrowed and lent." },
+  "@tabLoans": {
+    "description": "Bottom tab: books borrowed and lent."
+  },
   "tabMe": "Me",
-  "@tabMe": { "description": "Bottom tab: profile, reading log, settings." },
+  "@tabMe": {
+    "description": "Bottom tab: profile, reading log, settings."
+  },
   "shelfEmptyTitle": "Your shelf is waiting",
   "shelfEmptyBody": "Add the books you own so your neighbors can discover them.",
   "discoverEmptyTitle": "Find a book nearby",
@@ -20,6 +30,75 @@
   "daysLeft": "{count, plural, =0{Due today} =1{1 day left} other{{count} days left}}",
   "@daysLeft": {
     "description": "Countdown on an active loan.",
-    "placeholders": { "count": { "type": "int" } }
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "welcomeTagline": "Your neighbors' bookshelves, one shared library.",
+  "authEmail": "Email",
+  "authPassword": "Password",
+  "authEmailInvalid": "Please enter a valid email address.",
+  "authPasswordTooShort": "Use at least 8 characters.",
+  "authAdultCheckbox": "I am 18 or older",
+  "authAdultRequired": "VennskApp is for adults (18+) for now.",
+  "authSignIn": "Sign in",
+  "authSignUp": "Create account",
+  "authHaveAccount": "Already have an account? Sign in",
+  "authNoAccount": "New here? Create an account",
+  "authCheckEmail": "Almost there! Check your email to confirm your account.",
+  "authFailed": "Couldn't sign you in: {message}",
+  "@authFailed": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "genericError": "Something went wrong: {message}",
+  "@genericError": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "signOut": "Sign out",
+  "fieldRequired": "This field is required.",
+  "onboardingTitle": "Welcome, neighbor!",
+  "onboardingIntro": "Tell us a little about yourself so friends and neighbors can find you.",
+  "onboardingDisplayName": "Your name",
+  "onboardingUsername": "Username",
+  "onboardingUsernameHelp": "3–20 characters: lowercase letters, numbers, _",
+  "onboardingUsernameInvalid": "Use 3–20 lowercase letters, numbers or _.",
+  "onboardingUsernameTaken": "That username is taken. Try another one.",
+  "onboardingWhereTitle": "Where is your bookshelf?",
+  "onboardingAreaName": "Neighborhood name",
+  "onboardingAreaNameHelp": "Shown to others, e.g. \"Grünerløkka\" or \"Kadıköy\".",
+  "onboardingVisibilityTitle": "Who can see your books by default?",
+  "onboardingFinish": "Start sharing",
+  "locationUseMine": "Use my location",
+  "locationPrivacyNote": "Tap the map near your home. We only save an approximate area (about 1 km), never your address.",
+  "locationRequired": "Please mark your area on the map.",
+  "locationDenied": "Location permission was denied. You can tap the map instead.",
+  "locationFailed": "Couldn't get your location. You can tap the map instead.",
+  "visibilityPrivate": "Only me",
+  "visibilityFriends": "Friends",
+  "visibilityNeighbors": "Friends + neighborhood",
+  "visibilityPublic": "Everyone",
+  "visibilityPrivateHelp": "A private catalog, just for you.",
+  "visibilityFriendsHelp": "People you've added as friends.",
+  "visibilityNeighborsHelp": "Friends, plus neighbors within about 5 km.",
+  "visibilityPublicHelp": "Anyone on VennskApp.",
+  "meAreaSubtitle": "Your neighborhood",
+  "meDefaultVisibilitySubtitle": "Default visibility for new books",
+  "meThumbsUp": "{count, plural, =0{No thumbs-up yet} =1{1 thumbs-up from neighbors} other{{count} thumbs-up from neighbors}}",
+  "@meThumbsUp": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
   }
 }
